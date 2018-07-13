@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
 import "POGOProtos/Enums/IdentityProvider.proto";
-import "POGOProtos/Networking/Platform/PortalCurationImageResult.proto";
+import "POGOProtos/Data/PortalCurationImage.proto";
 import "POGOProtos/Data/Login/LoginDetail.proto";
 
 message RegisterPushNotificationResponse {
@@ -129,5 +129,5 @@ message SubmitNewPoiResponse {
 }
 
 message UploadPoiPhotoByUrlResponse {
-	.POGOProtos.Networking.Platform.PortalCurationImageResult.Result status = 1;
+	.POGOProtos.Data.PortalCurationImage.Result status = 1;
 }

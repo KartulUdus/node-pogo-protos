@@ -7,6 +7,18 @@ import "POGOProtos/Enums/PokemonMove.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 
 message PokemonData {
+	enum PokemonClass {
+		POKEMON_CLASS_NORMAL = 0;
+		POKEMON_CLASS_LEGENDARY = 1;
+		POKEMON_CLASS_MYTHIC = 2;
+	}
+
+	enum PokemonCreateContext {
+		CREATE_CONTEXT_WILD = 0;
+		CREATE_CONTEXT_EGG = 1;
+		CREATE_CONTEXT_EVOLVE = 2;
+	}
+
 	fixed64 id = 1;
 	.POGOProtos.Enums.PokemonId pokemon_id = 2;
 	int32 cp = 3;
