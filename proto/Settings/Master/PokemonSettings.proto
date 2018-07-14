@@ -3,7 +3,6 @@ package POGOProtos.Settings.Master;
 
 import "POGOProtos/Data/PokemonDisplay.proto";
 import "POGOProtos/Enums/PokemonId.proto";
-import "POGOProtos/Enums/PokemonRarity.proto";
 import "POGOProtos/Enums/PokemonType.proto";
 import "POGOProtos/Enums/PokemonMove.proto";
 import "POGOProtos/Enums/PokemonFamilyId.proto";
@@ -21,6 +20,12 @@ message PokemonSettings {
 		BUDDY_BABY = 4;
 	}
 
+	enum PokemonRarity {
+		POKEMON_RARITY_NORMAL = 0;
+		POKEMON_RARITY_LEGENDARY = 1;
+		POKEMON_RARITY_MYTHIC = 2;
+	}
+
 	.POGOProtos.Enums.PokemonId pokemon_id = 1;
 	float model_scale = 3;
 	.POGOProtos.Enums.PokemonType type = 4;
@@ -33,7 +38,7 @@ message PokemonSettings {
 	repeated float animation_time = 11;
 	repeated .POGOProtos.Enums.PokemonId evolution_ids = 12;
 	int32 evolution_pips = 13;
-	.POGOProtos.Enums.PokemonRarity rarity = 14;
+	PokemonRarity rarity = 14;
 	float pokedex_height_m = 15;
 	float pokedex_weight_kg = 16;
 	.POGOProtos.Enums.PokemonId parent_pokemon_id = 17;
