@@ -1,5 +1,5 @@
 syntax = "proto3";
-package OGOProtos.Networking.Requests.Social;
+package POGOProtos.Networking.Requests.Social;
 
 message OpenGiftMessage {
 	string player_id = 1;
