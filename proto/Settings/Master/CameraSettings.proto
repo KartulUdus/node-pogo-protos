@@ -1,13 +1,35 @@
 syntax = "proto3";
 package POGOProtos.Settings.Master;
 
-import "POGOProtos/Enums/CameraTarget.proto";
-import "POGOProtos/Enums/CameraInterpolation.proto";
-
 message CameraSettings {
+	enum CameraInterpolation {
+		CAM_INTERP_CUT = 0;
+		CAM_INTERP_LINEAR = 1;
+		CAM_INTERP_SMOOTH = 2;
+		CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE = 3;
+		CAM_INTERP_DEPENDS = 4;
+	}
+
+	enum CameraTarget {
+		CAM_TARGET_ATTACKER = 0;
+		CAM_TARGET_ATTACKER_EDGE = 1;
+		CAM_TARGET_ATTACKER_GROUND = 2;
+		CAM_TARGET_DEFENDER = 3;
+		CAM_TARGET_DEFENDER_EDGE = 4;
+		CAM_TARGET_DEFENDER_GROUND = 5;
+		CAM_TARGET_ATTACKER_DEFENDER = 6;
+		CAM_TARGET_ATTACKER_DEFENDER_EDGE = 7;
+		CAM_TARGET_DEFENDER_ATTACKER = 8;
+		CAM_TARGET_DEFENDER_ATTACKER_EDGE = 9;
+		CAM_TARGET_ATTACKER_DEFENDER_MIRROR = 11;
+		CAM_TARGET_SHOULDER_ATTACKER_DEFENDER = 12;
+		CAM_TARGET_SHOULDER_ATTACKER_DEFENDER_MIRROR = 13;
+		CAM_TARGET_ATTACKER_DEFENDER_WORLD = 14;
+	}
+
 	string next_camera = 1;
-	repeated .POGOProtos.Enums.CameraInterpolation interpolation = 2;
-	repeated .POGOProtos.Enums.CameraTarget target_type = 3;
+	repeated CameraInterpolation interpolation = 2;
+	repeated CameraTarget target_type = 3;
 	repeated float ease_in_speed = 4;
 	repeated float ease_out_speed = 5;
 	repeated float duration_seconds = 6;

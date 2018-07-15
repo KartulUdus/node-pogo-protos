@@ -1,6 +1,9 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
+import "POGOProtos/Enums/IdentityProvider.proto";
+import "POGOProtos/Data/Login/LoginDetail.proto";
+
 message RegisterPushNotificationResponse {
 	Result result = 1;
 
@@ -61,25 +64,86 @@ message AddNewPoiResponse {
 }
 
 message ProxySocialActionResponse {
-    Status status = 1;
-    string assigned_host = 2;
-    bytes payload = 3;
+	Status status = 1;
+	string assigned_host = 2;
+	bytes payload = 3;
 
-    enum Status {
-        UNSET = 0;
-        COMPLETED = 1;
-        COMPLETED_AND_REASSIGNED = 2;
-        ACTION_NOT_FOUND = 3;
-        ASSIGNMENT_ERROR = 4;
-        PROXY_UNAUTHORIZED_ERROR = 5;
-        INTERNAL_ERROR = 6;
-        BAD_REQUEST = 7;
-        ACCESS_DENIED = 8;
-        TIMEOUT_ERROR = 9;
-    }
+	enum Status {
+		UNSET = 0;
+		COMPLETED = 1;
+		COMPLETED_AND_REASSIGNED = 2;
+		ACTION_NOT_FOUND = 3;
+		ASSIGNMENT_ERROR = 4;
+		PROXY_UNAUTHORIZED_ERROR = 5;
+		INTERNAL_ERROR = 6;
+		BAD_REQUEST = 7;
+		ACCESS_DENIED = 8;
+		TIMEOUT_ERROR = 9;
+	}
 }
 
 message GetAvailableSubmissionsResponse {
 	int32 submissions_left = 1;
 	int32 min_player_level = 2;
+}
+
+message PushNotificationRegistryResponse {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		NO_CHANGE = 2;
+	}
+
+	Result result = 1;
+}
+
+message AddLoginActionResponse {
+	bool success = 1;
+	repeated .POGOProtos.Data.Login.LoginDetail login_detail = 2;
+	Status status = 3;
+
+	enum Status {
+		UNSET = 0;
+		AUTH_FAILURE = 1;
+		LOGIN_TAKEN = 2;
+	}
+}
+
+message RemoveLoginAction {
+	.POGOProtos.Enums.IdentityProvider identity_provider = 1;
+}
+
+message SubmitNewPoiResponse {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		INTERNAL_ERROR = 3;
+		TOO_MANY_RECENT_SUBMISSIONS = 4;
+		INVALID_INPUT = 5;
+	}
+
+	Status status = 1;
+	repeated string message = 2;
+}
+
+message UploadPoiPhotoByUrlResponse {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FEATURE_DISABLED = 2;
+		ALREADY_UPLOADED = 3;
+		IMAGE_NOT_FOUND = 4;
+		IMAGE_TOO_BIG = 5;
+		IMAGE_NOT_SERVABLE = 6;
+		PORTAL_NOT_FOUND = 7;
+	}
+
+	Result status = 1;
+}
+
+message PingResponse {
+	string user_info = 1;
+	string server_info = 2;
+	string random_response_bytes = 3;
 }
