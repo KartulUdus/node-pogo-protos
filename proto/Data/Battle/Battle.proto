@@ -3,7 +3,7 @@ package POGOProtos.Data.Battle;
 
 import "POGOProtos/Data/Battle/BattleParticipant.proto";
 import "POGOProtos/Data/Battle/BattleLog.proto";
-import "POGOProtos/Data/PokemonDisplay.proto";
+import "POGOProtos/Enums/WeatherCondition.proto";
 import "POGOProtos/Enums/FriendshipLevelMilestone.proto";
 
 message Battle {
@@ -13,6 +13,6 @@ message Battle {
 	.POGOProtos.Data.Battle.BattleParticipant defender = 4;
 	.POGOProtos.Data.Battle.BattleLog battle_log = 5;
 	.POGOProtos.Data.Battle.BattleParticipant attacker = 6;
-	.POGOProtos.Data.PokemonDisplay.WeatherCondition weather_condition = 7;
+	.POGOProtos.Enums.WeatherCondition weather_condition = 7;
 	.POGOProtos.Enums.FriendshipLevelMilestone highest_friendship_milestone = 8;
 }

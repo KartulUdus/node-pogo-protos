@@ -2,9 +2,9 @@ syntax = "proto3";
 package POGOProtos.Settings.Master;
 
 import "POGOProtos/Enums/PokemonType.proto";
-import "POGOProtos/Data/PokemonDisplay.proto";
+import "POGOProtos/Enums/WeatherCondition.proto";
 
 message WeatherAffinity {
-	.POGOProtos.Data.PokemonDisplay.WeatherCondition weather_condition = 1;
+	.POGOProtos.Enums.WeatherCondition weather_condition = 1;
 	repeated .POGOProtos.Enums.PokemonType pokemon_type = 2;
 }

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package POGOProtos.Data.Logs;
 
-import "POGOProtos/Data/Quests/QuestPokemonEncounter.proto";
+import "POGOProtos/Enums/EncounterType.proto";
 import "POGOProtos/Data/PokemonDisplay.proto";
 
 message CompleteQuestPokemonEncounterLogEntry {
@@ -10,7 +10,7 @@ message CompleteQuestPokemonEncounterLogEntry {
 	int32 combat_points = 3;
 	fixed64 pokemon_id = 4;
 	.POGOProtos.Data.PokemonDisplay pokemon_display = 5;
-	.POGOProtos.Data.Quests.QuestPokemonEncounter.EncounterType encounter_type = 6;
+	.POGOProtos.Enums.EncounterType encounter_type = 6;
 
 	enum Result {
 		UNSET = 0;
