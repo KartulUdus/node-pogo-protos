@@ -1,7 +1,6 @@
 syntax = "proto3";
 package POGOProtos.Settings;
 
-import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Settings/EventSettings.proto";
 import "POGOProtos/Settings/FestivalSettings.proto";
 import "POGOProtos/Settings/FortSettings.proto";
