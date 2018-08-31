@@ -20,6 +20,7 @@ import "POGOProtos/Settings/LoginSettings.proto";
 import "POGOProtos/Settings/QuestGlobalSettings.proto";
 import "POGOProtos/Settings/SocialClientSettings.proto";
 import "POGOProtos/Settings/TradingGlobalSettings.proto";
+import "POGOProtos/Settings/UpsightLoggingSettings.proto";
 import "POGOProtos/Enums/PokemonId.proto";
 
 message GlobalSettings {
