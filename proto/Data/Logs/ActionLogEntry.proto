@@ -12,6 +12,8 @@ import "POGOProtos/Data/Logs/CompleteQuestPokemonEncounterLogEntry.proto";
 import "POGOProtos/Data/Logs/OpenGiftLogEntry.proto";
 import "POGOProtos/Data/Logs/SendGiftLogEntry.proto";
 import "POGOProtos/Data/Logs/TradingLogEntry.proto";
+import "POGOProtos/Data/Logs/ShareExRaidPassLogEntry.proto";
+import "POGOProtos/Data/Logs/DeclineExRaidPassLogEntry.proto";
 
 message ActionLogEntry {
 	int64 timestamp_ms = 1;

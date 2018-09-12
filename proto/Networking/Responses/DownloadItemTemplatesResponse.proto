@@ -28,6 +28,7 @@ import "POGOProtos/Settings/Master/IapItemCategoryDisplay.proto";
 import "POGOProtos/Settings/Master/OnboardingSettings.proto";
 import "POGOProtos/Settings/Master/FriendshipLevelMilestoneSettings.proto";
 import "POGOProtos/Settings/Master/LuckyPokemonSettings.proto";
+import "POGOProtos/Settings/Master/ExRaidSettings.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;
