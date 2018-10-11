@@ -6893,6 +6893,17 @@ export namespace POGOProtos {
             MOVEMENT_HOVERING = 6
         }
 
+        enum PokemonNature {
+            NATURE_UNKNOWN = 0,
+            NATURE_STOIC = 1,
+            NATURE_ASSASSIN = 2,
+            NATURE_GUARDIAN = 3,
+            NATURE_RAIDER = 4,
+            NATURE_PROTECTOR = 5,
+            NATURE_SENTRY = 6,
+            NATURE_CHAMPION = 7
+        }
+
         enum PokemonRarity {
             POKEMON_RARITY_NORMAL = 0,
             POKEMON_RARITY_LEGENDARY = 1,

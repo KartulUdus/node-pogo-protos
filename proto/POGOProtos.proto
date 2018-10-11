@@ -207,6 +207,7 @@ import public "Enums/PokemonGoPlusIds.proto";
 import public "Enums/PokemonId.proto";
 import public "Enums/PokemonMove.proto";
 import public "Enums/PokemonMovementType.proto";
+import public "Enums/PokemonNature.proto";
 import public "Enums/PokemonRarity.proto";
 import public "Enums/PokemonTradingType.proto";
 import public "Enums/PokemonType.proto";
