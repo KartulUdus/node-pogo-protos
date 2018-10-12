@@ -835,6 +835,29 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
+        interface IFitnessReport {
+            num_eggs_hatched?: (number|null);
+            num_buddy_candy_earned?: (number|null);
+            distance_walked_km?: (number|null);
+            week_bucket?: (number|Long|null);
+        }
+
+        class FitnessReport implements IFitnessReport {
+            constructor(properties?: POGOProtos.Data.IFitnessReport);
+            public num_eggs_hatched: number;
+            public num_buddy_candy_earned: number;
+            public distance_walked_km: number;
+            public week_bucket: (number|Long);
+            public static create(properties?: POGOProtos.Data.IFitnessReport): POGOProtos.Data.FitnessReport;
+            public static encode(message: POGOProtos.Data.IFitnessReport, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: POGOProtos.Data.IFitnessReport, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.FitnessReport;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.FitnessReport;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Data.FitnessReport;
+            public static toObject(message: POGOProtos.Data.FitnessReport, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         interface IFoodValue {
             motivation_increase?: (number|null);
             cp_increase?: (number|null);
@@ -1394,29 +1417,6 @@ export namespace POGOProtos {
                 public static toObject(message: POGOProtos.Data.Gym.GymStatusAndDefenders, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
-        }
-
-        interface IHoloFitnessReport {
-            num_eggs_hatched?: (number|null);
-            num_buddy_candy_earned?: (number|null);
-            distance_walked_km?: (number|null);
-            week_bucket?: (number|Long|null);
-        }
-
-        class HoloFitnessReport implements IHoloFitnessReport {
-            constructor(properties?: POGOProtos.Data.IHoloFitnessReport);
-            public num_eggs_hatched: number;
-            public num_buddy_candy_earned: number;
-            public distance_walked_km: number;
-            public week_bucket: (number|Long);
-            public static create(properties?: POGOProtos.Data.IHoloFitnessReport): POGOProtos.Data.HoloFitnessReport;
-            public static encode(message: POGOProtos.Data.IHoloFitnessReport, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static encodeDelimited(message: POGOProtos.Data.IHoloFitnessReport, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.HoloFitnessReport;
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.HoloFitnessReport;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Data.HoloFitnessReport;
-            public static toObject(message: POGOProtos.Data.HoloFitnessReport, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
         }
 
         namespace Login {
@@ -2426,6 +2426,23 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
+            interface ISocialPlayerSettings {
+                disable_last_pokemon_caught?: (boolean|null);
+            }
+
+            class SocialPlayerSettings implements ISocialPlayerSettings {
+                constructor(properties?: POGOProtos.Data.Player.ISocialPlayerSettings);
+                public disable_last_pokemon_caught: boolean;
+                public static create(properties?: POGOProtos.Data.Player.ISocialPlayerSettings): POGOProtos.Data.Player.SocialPlayerSettings;
+                public static encode(message: POGOProtos.Data.Player.ISocialPlayerSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Player.ISocialPlayerSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Player.SocialPlayerSettings;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Player.SocialPlayerSettings;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Player.SocialPlayerSettings;
+                public static toObject(message: POGOProtos.Data.Player.SocialPlayerSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
             interface IUserAttributes {
                 level?: (number|null);
                 xp?: (number|Long|null);
@@ -2525,7 +2542,7 @@ export namespace POGOProtos {
             battle_lockout_end_ms?: (number|Long|null);
             secondary_player_avatar?: (POGOProtos.Data.Player.IPlayerAvatar|null);
             name_is_blacklisted?: (boolean|null);
-            social_player_settings?: (POGOProtos.Settings.ISocialPlayerSettings|null);
+            social_player_settings?: (POGOProtos.Data.Player.ISocialPlayerSettings|null);
         }
 
         class PlayerData implements IPlayerData {
@@ -2546,7 +2563,7 @@ export namespace POGOProtos {
             public battle_lockout_end_ms: (number|Long);
             public secondary_player_avatar?: (POGOProtos.Data.Player.IPlayerAvatar|null);
             public name_is_blacklisted: boolean;
-            public social_player_settings?: (POGOProtos.Settings.ISocialPlayerSettings|null);
+            public social_player_settings?: (POGOProtos.Data.Player.ISocialPlayerSettings|null);
             public static create(properties?: POGOProtos.Data.IPlayerData): POGOProtos.Data.PlayerData;
             public static encode(message: POGOProtos.Data.IPlayerData, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Data.IPlayerData, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -12688,12 +12705,12 @@ export namespace POGOProtos {
                 }
 
                 interface ISaveSocialPlayerSettingsMessage {
-                    settings?: (POGOProtos.Settings.ISocialPlayerSettings|null);
+                    settings?: (POGOProtos.Data.Player.ISocialPlayerSettings|null);
                 }
 
                 class SaveSocialPlayerSettingsMessage implements ISaveSocialPlayerSettingsMessage {
                     constructor(properties?: POGOProtos.Networking.Requests.Social.ISaveSocialPlayerSettingsMessage);
-                    public settings?: (POGOProtos.Settings.ISocialPlayerSettings|null);
+                    public settings?: (POGOProtos.Data.Player.ISocialPlayerSettings|null);
                     public static create(properties?: POGOProtos.Networking.Requests.Social.ISaveSocialPlayerSettingsMessage): POGOProtos.Networking.Requests.Social.SaveSocialPlayerSettingsMessage;
                     public static encode(message: POGOProtos.Networking.Requests.Social.ISaveSocialPlayerSettingsMessage, writer?: $protobuf.Writer): $protobuf.Writer;
                     public static encodeDelimited(message: POGOProtos.Networking.Requests.Social.ISaveSocialPlayerSettingsMessage, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -19337,23 +19354,6 @@ export namespace POGOProtos {
             public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.SocialGiftCountTelemetry;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.SocialGiftCountTelemetry;
             public static toObject(message: POGOProtos.Settings.SocialGiftCountTelemetry, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
-        interface ISocialPlayerSettings {
-            disable_last_pokemon_caught?: (boolean|null);
-        }
-
-        class SocialPlayerSettings implements ISocialPlayerSettings {
-            constructor(properties?: POGOProtos.Settings.ISocialPlayerSettings);
-            public disable_last_pokemon_caught: boolean;
-            public static create(properties?: POGOProtos.Settings.ISocialPlayerSettings): POGOProtos.Settings.SocialPlayerSettings;
-            public static encode(message: POGOProtos.Settings.ISocialPlayerSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static encodeDelimited(message: POGOProtos.Settings.ISocialPlayerSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.SocialPlayerSettings;
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.SocialPlayerSettings;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.SocialPlayerSettings;
-            public static toObject(message: POGOProtos.Settings.SocialPlayerSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
             public toJSON(): { [k: string]: any };
         }
 
