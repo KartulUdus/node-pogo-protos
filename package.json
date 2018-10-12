@@ -28,10 +28,10 @@
   },
   "typings": "./pogo-protos.d.ts",
   "scripts": {
-    "test": "node test/test.js",
-    "compile": "node proto/compile.js",
-    "minjs": "pbjs --keep-case -t static-module --no-verify --no-beautify --no-comments -o compiled.js ./proto/POGOProtos.proto",
-    "js": "pbjs --keep-case -t static-module --no-verify -o temp.js ./proto/POGOProtos.proto",
+    "test": "node ./test/test.js",
+    "compile": "node ./POGOProtos/src/POGOProtos/compile.js",
+    "minjs": "pbjs --keep-case -t static-module --no-verify --no-beautify --no-comments -o compiled.js ./POGOProtos/src/POGOProtos/POGOProtos.proto",
+    "js": "pbjs --keep-case -t static-module --no-verify -o temp.js ./POGOProtos/src/POGOProtos/POGOProtos.proto",
     "ts": "pbts --no-comments -o compiled.d.ts temp.js"
   }
 }
