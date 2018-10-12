@@ -774,31 +774,6 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
-        interface ICurrencyQuantity {
-            currency_type?: (string|null);
-            quantity?: (number|null);
-            fiat_purchased_quantity?: (number|null);
-            fiat_currency_type?: (string|null);
-            fiat_currency_cost_e6?: (number|Long|null);
-        }
-
-        class CurrencyQuantity implements ICurrencyQuantity {
-            constructor(properties?: POGOProtos.Data.ICurrencyQuantity);
-            public currency_type: string;
-            public quantity: number;
-            public fiat_purchased_quantity: number;
-            public fiat_currency_type: string;
-            public fiat_currency_cost_e6: (number|Long);
-            public static create(properties?: POGOProtos.Data.ICurrencyQuantity): POGOProtos.Data.CurrencyQuantity;
-            public static encode(message: POGOProtos.Data.ICurrencyQuantity, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static encodeDelimited(message: POGOProtos.Data.ICurrencyQuantity, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.CurrencyQuantity;
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.CurrencyQuantity;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Data.CurrencyQuantity;
-            public static toObject(message: POGOProtos.Data.CurrencyQuantity, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
         interface IDamageProperty {
             super_effective_charge_move?: (boolean|null);
             weather_boosted?: (boolean|null);
@@ -2064,14 +2039,20 @@ export namespace POGOProtos {
             }
 
             interface ICurrency {
-                name?: (string|null);
-                amount?: (number|null);
+                currency_type?: (string|null);
+                quantity?: (number|null);
+                fiat_purchased_quantity?: (number|null);
+                fiat_currency_type?: (string|null);
+                fiat_currency_cost_e6?: (number|Long|null);
             }
 
             class Currency implements ICurrency {
                 constructor(properties?: POGOProtos.Data.Player.ICurrency);
-                public name: string;
-                public amount: number;
+                public currency_type: string;
+                public quantity: number;
+                public fiat_purchased_quantity: number;
+                public fiat_currency_type: string;
+                public fiat_currency_cost_e6: (number|Long);
                 public static create(properties?: POGOProtos.Data.Player.ICurrency): POGOProtos.Data.Player.Currency;
                 public static encode(message: POGOProtos.Data.Player.ICurrency, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Player.ICurrency, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -2538,7 +2519,7 @@ export namespace POGOProtos {
             daily_bonus?: (POGOProtos.Data.Player.IDailyBonus|null);
             equipped_badge?: (POGOProtos.Data.Player.IEquippedBadge|null);
             contact_settings?: (POGOProtos.Data.Player.IContactSettings|null);
-            currencies?: (POGOProtos.Data.Player.ICurrency[]|null);
+            currency_balance?: (POGOProtos.Data.Player.ICurrency[]|null);
             remaining_codename_claims?: (number|null);
             buddy_pokemon?: (POGOProtos.Data.IBuddyPokemon|null);
             battle_lockout_end_ms?: (number|Long|null);
@@ -2559,7 +2540,7 @@ export namespace POGOProtos {
             public daily_bonus?: (POGOProtos.Data.Player.IDailyBonus|null);
             public equipped_badge?: (POGOProtos.Data.Player.IEquippedBadge|null);
             public contact_settings?: (POGOProtos.Data.Player.IContactSettings|null);
-            public currencies: POGOProtos.Data.Player.ICurrency[];
+            public currency_balance: POGOProtos.Data.Player.ICurrency[];
             public remaining_codename_claims: number;
             public buddy_pokemon?: (POGOProtos.Data.IBuddyPokemon|null);
             public battle_lockout_end_ms: (number|Long);
@@ -5824,7 +5805,11 @@ export namespace POGOProtos {
             GIFTBOX_INCOMING = 6,
             GIFTBOX_DELIVERED = 7,
             FRIENDSHIP_MILESTONE_REWARD = 8,
-            GYM_BATTLE_FRIENDSHIP_INCREMENT = 9
+            GYM_BATTLE_FRIENDSHIP_INCREMENT = 9,
+            SHARED_EXCLUSIVE_RAID_INVITE = 10,
+            BGMODE_EGG_HATCH = 11,
+            BGMODE_BUDDY_CANDY = 12,
+            BGMODE_WEEKLY_FITNESS_REPORT = 13
         }
 
         enum NotificationState {
@@ -7067,7 +7052,12 @@ export namespace POGOProtos {
             CHECK_ENCOUNTER_TRAY_INFO = 30,
             POKEMON_GO_PLUS = 31,
             RPC_TIMING = 32,
-            SOCIAL_GIFT_COUNT = 33
+            SOCIAL_GIFT_COUNT = 33,
+            ASSET_BUNDLE_DOWNLOAD = 34,
+            ASSET_POI_DOWNLOAD = 35,
+            ASSET_STREAM_DOWNLOAD = 36,
+            ASSET_STREAM_CACHE_CULLED = 37,
+            RPC_SOCKET_TIMING = 38
         }
 
         enum AvatarCustomizationTelemetryIds {
@@ -7268,7 +7258,8 @@ export namespace POGOProtos {
             GIFT_LOOT_ITEMS = 1023,
             GIFT_EGG = 1024,
             FRIENDSHIP_MILESTONE_REWARD_DETAILS = 1025,
-            FRIENDSHIP_LEVEL_DISPLAY = 1026
+            FRIENDSHIP_LEVEL_DISPLAY = 1026,
+            BGMODE_BUDDY_POKEMON_NICKNAME = 1027
         }
 
         enum WeatherCondition {
@@ -7407,6 +7398,8 @@ export namespace POGOProtos {
             spawn_time_ms?: (number|Long|null);
             is_cancelled?: (boolean|null);
             raid_pokemon?: (POGOProtos.Data.IPokemonData|null);
+            inviter?: (POGOProtos.Data.Raid.ISharedExclusiveTicketTrainerInfo|null);
+            invitee?: (POGOProtos.Data.Raid.ISharedExclusiveTicketTrainerInfo|null);
         }
 
         class ExclusiveTicketInfo implements IExclusiveTicketInfo {
@@ -7422,6 +7415,8 @@ export namespace POGOProtos {
             public spawn_time_ms: (number|Long);
             public is_cancelled: boolean;
             public raid_pokemon?: (POGOProtos.Data.IPokemonData|null);
+            public inviter?: (POGOProtos.Data.Raid.ISharedExclusiveTicketTrainerInfo|null);
+            public invitee?: (POGOProtos.Data.Raid.ISharedExclusiveTicketTrainerInfo|null);
             public static create(properties?: POGOProtos.Inventory.IExclusiveTicketInfo): POGOProtos.Inventory.ExclusiveTicketInfo;
             public static encode(message: POGOProtos.Inventory.IExclusiveTicketInfo, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Inventory.IExclusiveTicketInfo, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -17441,6 +17436,23 @@ export namespace POGOProtos {
 
     namespace Settings {
 
+        interface IBackgroundModeGlobalSettings {
+            min_player_level_fitness?: (number|null);
+        }
+
+        class BackgroundModeGlobalSettings implements IBackgroundModeGlobalSettings {
+            constructor(properties?: POGOProtos.Settings.IBackgroundModeGlobalSettings);
+            public min_player_level_fitness: number;
+            public static create(properties?: POGOProtos.Settings.IBackgroundModeGlobalSettings): POGOProtos.Settings.BackgroundModeGlobalSettings;
+            public static encode(message: POGOProtos.Settings.IBackgroundModeGlobalSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: POGOProtos.Settings.IBackgroundModeGlobalSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.BackgroundModeGlobalSettings;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.BackgroundModeGlobalSettings;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.BackgroundModeGlobalSettings;
+            public static toObject(message: POGOProtos.Settings.BackgroundModeGlobalSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         interface IClientPerformanceSettings {
             enable_local_disk_caching?: (boolean|null);
             max_number_local_battle_parties?: (number|null);
@@ -17588,7 +17600,7 @@ export namespace POGOProtos {
             trading_global_settings?: (POGOProtos.Settings.ITradingGlobalSettings|null);
             additional_allowed_pokemon_ids?: (POGOProtos.Enums.PokemonId[]|null);
             upsight_logging_settings?: (POGOProtos.Settings.IUpsightLoggingSettings|null);
-            bgmode_global_settings?: (POGOProtos.Settings.Master.IBackgroundModeGlobalSettings|null);
+            bgmode_global_settings?: (POGOProtos.Settings.IBackgroundModeGlobalSettings|null);
             probe_settings?: (POGOProtos.Settings.IProbeSettings|null);
         }
 
@@ -17618,7 +17630,7 @@ export namespace POGOProtos {
             public trading_global_settings?: (POGOProtos.Settings.ITradingGlobalSettings|null);
             public additional_allowed_pokemon_ids: POGOProtos.Enums.PokemonId[];
             public upsight_logging_settings?: (POGOProtos.Settings.IUpsightLoggingSettings|null);
-            public bgmode_global_settings?: (POGOProtos.Settings.Master.IBackgroundModeGlobalSettings|null);
+            public bgmode_global_settings?: (POGOProtos.Settings.IBackgroundModeGlobalSettings|null);
             public probe_settings?: (POGOProtos.Settings.IProbeSettings|null);
             public static create(properties?: POGOProtos.Settings.IGlobalSettings): POGOProtos.Settings.GlobalSettings;
             public static encode(message: POGOProtos.Settings.IGlobalSettings, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -17809,23 +17821,6 @@ export namespace POGOProtos {
                     IAP_CLOTHING = 3,
                     LEVEL_REWARD = 4
                 }
-            }
-
-            interface IBackgroundModeGlobalSettings {
-                min_player_level_fitness?: (number|null);
-            }
-
-            class BackgroundModeGlobalSettings implements IBackgroundModeGlobalSettings {
-                constructor(properties?: POGOProtos.Settings.Master.IBackgroundModeGlobalSettings);
-                public min_player_level_fitness: number;
-                public static create(properties?: POGOProtos.Settings.Master.IBackgroundModeGlobalSettings): POGOProtos.Settings.Master.BackgroundModeGlobalSettings;
-                public static encode(message: POGOProtos.Settings.Master.IBackgroundModeGlobalSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static encodeDelimited(message: POGOProtos.Settings.Master.IBackgroundModeGlobalSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.Master.BackgroundModeGlobalSettings;
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.Master.BackgroundModeGlobalSettings;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.Master.BackgroundModeGlobalSettings;
-                public static toObject(message: POGOProtos.Settings.Master.BackgroundModeGlobalSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
             }
 
             interface IBackgroundModeSettings {
