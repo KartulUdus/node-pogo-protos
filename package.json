@@ -29,9 +29,9 @@
   "typings": "./pogo-protos.d.ts",
   "scripts": {
     "test": "node ./test/test.js",
-    "compile": "node ./POGOProtos/src/POGOProtos/compile.js",
-    "minjs": "pbjs --keep-case -t static-module --no-verify --no-beautify --no-comments -o compiled.js ./POGOProtos/src/POGOProtos/POGOProtos.proto",
-    "js": "pbjs --keep-case -t static-module --no-verify -o temp.js ./POGOProtos/src/POGOProtos/POGOProtos.proto",
+    "compile": "node ./test/compile.js",
+    "minjs": "pbjs --keep-case -t static-module --no-verify --no-beautify --no-comments -o compiled.js ./test/POGOProtos.proto",
+    "js": "pbjs --keep-case -t static-module --no-verify -o temp.js ./test/POGOProtos.proto",
     "ts": "pbts --no-comments -o compiled.d.ts temp.js"
   }
 }
