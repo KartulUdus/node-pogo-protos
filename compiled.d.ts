@@ -732,29 +732,29 @@ export namespace POGOProtos {
                 public static toObject(message: POGOProtos.Data.Capture.CaptureProbability, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
-        }
 
-        interface ICaptureScore {
-            activity_type?: (POGOProtos.Enums.ActivityType[]|null);
-            exp?: (number[]|null);
-            candy?: (number[]|null);
-            stardust?: (number[]|null);
-        }
+            interface ICaptureScore {
+                activity_type?: (POGOProtos.Enums.ActivityType[]|null);
+                exp?: (number[]|null);
+                candy?: (number[]|null);
+                stardust?: (number[]|null);
+            }
 
-        class CaptureScore implements ICaptureScore {
-            constructor(properties?: POGOProtos.Data.ICaptureScore);
-            public activity_type: POGOProtos.Enums.ActivityType[];
-            public exp: number[];
-            public candy: number[];
-            public stardust: number[];
-            public static create(properties?: POGOProtos.Data.ICaptureScore): POGOProtos.Data.CaptureScore;
-            public static encode(message: POGOProtos.Data.ICaptureScore, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static encodeDelimited(message: POGOProtos.Data.ICaptureScore, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.CaptureScore;
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.CaptureScore;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Data.CaptureScore;
-            public static toObject(message: POGOProtos.Data.CaptureScore, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
+            class CaptureScore implements ICaptureScore {
+                constructor(properties?: POGOProtos.Data.Capture.ICaptureScore);
+                public activity_type: POGOProtos.Enums.ActivityType[];
+                public exp: number[];
+                public candy: number[];
+                public stardust: number[];
+                public static create(properties?: POGOProtos.Data.Capture.ICaptureScore): POGOProtos.Data.Capture.CaptureScore;
+                public static encode(message: POGOProtos.Data.Capture.ICaptureScore, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Capture.ICaptureScore, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Capture.CaptureScore;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Capture.CaptureScore;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Capture.CaptureScore;
+                public static toObject(message: POGOProtos.Data.Capture.CaptureScore, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
         }
 
         interface IClientVersion {
@@ -5735,6 +5735,28 @@ export namespace POGOProtos {
             ACTIVITY_RAID_LEVEL_5_ADDITIONAL_XP = 46
         }
 
+        enum ArContext {
+            ENCOUNTER = 0
+        }
+
+        enum ArPlusMode {
+            ARPLUS = 0,
+            AR = 1,
+            NORMAL = 2
+        }
+
+        enum AssetBundleStatus {
+            UNLOADED = 0,
+            LOADING = 1,
+            LOADED = 2,
+            FAILED = 3
+        }
+
+        enum AvatarCompletion {
+            SUCCESS_AvatarCompletion = 0,
+            QUIT = 1
+        }
+
         enum BadgeType {
             BADGE_UNSET = 0,
             BADGE_TRAVEL_KM = 1,
@@ -5825,6 +5847,12 @@ export namespace POGOProtos {
             BADGE_YOKOSUKA_2_SEP_2018_KURIHAMA = 2034
         }
 
+        enum BattleResultsExit {
+            LEAVE_GYM = 0,
+            LEAVE_BATTLE = 1,
+            CONTINUE_BATTLE = 2
+        }
+
         enum BuddySize {
             BUDDY_MEDIUM = 0,
             BUDDY_SHOULDER = 1,
@@ -5858,6 +5886,15 @@ export namespace POGOProtos {
             CAM_TARGET_ATTACKER_DEFENDER_WORLD = 14
         }
 
+        enum CentralState {
+            UNKNOWN_CentralStat = 0,
+            RESETTING = 1,
+            UNSUPPORTED = 2,
+            UNAUTHORIZED = 3,
+            POWERED_OFF = 4,
+            POWERED_ON = 5
+        }
+
         enum Costume {
             COSTUME_UNSET = 0,
             HOLIDAY_2016 = 1,
@@ -5866,6 +5903,12 @@ export namespace POGOProtos {
             HALLOWEEN_2017 = 4,
             SUMMER_2018 = 5,
             FALL_2018 = 6
+        }
+
+        enum CurrencyType {
+            UNKNOWN_CurrencyType = 0,
+            POKECOIN = 1,
+            STARDUST = 2
         }
 
         enum EncounterType {
@@ -6054,6 +6097,11 @@ export namespace POGOProtos {
             SUPER_AWESOME = 7
         }
 
+        enum IncubationResult {
+            SUCCESS_IncubationResult = 0,
+            FAILURE = 1
+        }
+
         enum ItemCategory {
             ITEM_CATEGORY_NONE = 0,
             ITEM_CATEGORY_POKEBALL = 1,
@@ -6099,22 +6147,30 @@ export namespace POGOProtos {
             UNSET_NotificationCategory = 0,
             GYM_REMOVAL = 1,
             POKEMON_HUNGRY = 2,
-            POKEMON_WON = 3,
-            EXCLUSIVE_RAID_INVITE = 4,
-            EXCLUSIVE_RAID_CANCELLATION = 5,
+            EXCLUSIVE_RAID_INVITE = 3,
+            EXCLUSIVE_RAID_CANCELLATION = 4,
+            SHARED_EXCLUSIVE_RAID_INVITE = 5,
             GIFTBOX_INCOMING = 6,
             GIFTBOX_DELIVERED = 7,
             FRIENDSHIP_MILESTONE_REWARD = 8,
             GYM_BATTLE_FRIENDSHIP_INCREMENT = 9,
-            SHARED_EXCLUSIVE_RAID_INVITE = 10,
-            BGMODE_EGG_HATCH = 11,
-            BGMODE_BUDDY_CANDY = 12,
-            BGMODE_WEEKLY_FITNESS_REPORT = 13
+            BGMODE_EGG_HATCH = 10,
+            BGMODE_BUDDY_CANDY = 11,
+            BGMODE_WEEKLY_FITNESS_REPORT = 12,
+            FRIEND_INVITE_RECEIVED = 13,
+            FRIEND_INVITE_ACCEPTED = 14
         }
 
         enum NotificationState {
             UNSET_STATE = 0,
             VIEWED = 1
+        }
+
+        enum NotificationType {
+            NO_NOTIFICATIONS = 0,
+            POKEMON_NOTIFICATIONS = 1,
+            POKESTOP_NOTIFICATIONS = 2,
+            ALL_NOTIFICATIONS = 3
         }
 
         enum Platform {
@@ -6124,6 +6180,71 @@ export namespace POGOProtos {
             OSX = 3,
             WINDOWS = 4,
             APPLE_WATCH = 5
+        }
+
+        enum PlatformClientAction {
+            UNKNOWN_PLATFORM_CLIENT_ACTION = 0,
+            REGISTER_PUSH_NOTIFICATION = 5000,
+            UNREGISTER_PUSH_NOTIFICATION = 5001,
+            UPDATE_NOTIFICATION_STATUS = 5002,
+            OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003,
+            DOWNLOAD_GAME_MASTER_TEMPLATES = 5004,
+            GET_INVENTORY = 5005,
+            REDEEM_PASSCODE = 5006,
+            PING = 5007,
+            ADD_LOGIN_ACTION = 5008,
+            REMOVE_LOGIN_ACTION = 5009,
+            LIST_LOGIN_ACTION = 5010,
+            ADD_NEW_POI = 5011,
+            PROXY_SOCIAL_ACTION = 5012,
+            CLIENT_TELEMETRY = 5013,
+            GET_AVAILABLE_SUBMISSIONS = 5014,
+            GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 5015,
+            REPLACE_LOGIN_ACTION = 5016,
+            PROXY_SOCIAL_SIDE_CHANNEL_ACTION = 5017,
+            COLLECT_CLIENT_TELEMETRY = 5018,
+            PURCHASE_SKU = 5019,
+            GET_AVAILABLE_SKUS_AND_BALANCES = 5020,
+            REDEEM_GOOGLE_RECEIPT = 5021,
+            REDEEM_APPLE_RECEIPT = 5022,
+            REDEEM_DESKTOP_RECEIPT = 5023,
+            UPDATE_FITNESS_METRICS = 5024,
+            GET_FITNESS_REPORT = 5025,
+            GET_CLIENT_TELEMETRY_SETTINGS = 5026,
+            PING_ASYNC = 5027,
+            REGISTER_BACKGROUND_SERVICE = 5028,
+            GET_CLIENT_BGMODE_SETTINGS = 5029,
+            PING_DOWNSTREAM = 5030
+        }
+
+        enum PluginState {
+            UNKNOWN_PluginState = 0,
+            INITIALIZED = 1,
+            STARTING = 2,
+            STARTED = 3,
+            RESUMED = 4,
+            PAUSED = 5,
+            STOPPED = 6
+        }
+
+        enum PoiSubmissionTutorialPage {
+            WHAT_IS_POKESTOP = 0,
+            SUBMIT_FOR_REVIEW = 1,
+            HOW_TO_CHOOSE_A_LOCATION = 2,
+            DESCRIBE_A_LOCATION = 3
+        }
+
+        enum PokemonAnim {
+            NONE_PokemonAnim = 0,
+            IDLE_01 = 1,
+            IDLE_02 = 2,
+            LAND = 3,
+            ATTACK_01 = 4,
+            ATTACK_02 = 5,
+            DAMAGED = 6,
+            STUNNED = 7,
+            LOOP = 8,
+            _MAX = 9
         }
 
         enum PokemonClass {
@@ -7228,6 +7349,13 @@ export namespace POGOProtos {
             POKEMON_TYPE_FAIRY = 18
         }
 
+        enum PresentationType {
+            UNKNOWN_PresentationType = 0,
+            CATEGORY = 1,
+            SORT = 2,
+            SALE = 3
+        }
+
         enum QuestType {
             QUEST_UNKNOWN_TYPE = 0,
             QUEST_FIRST_CATCH_OF_THE_DAY = 1,
@@ -7266,6 +7394,17 @@ export namespace POGOProtos {
             RAID_LEVEL_5 = 5
         }
 
+        enum SfidaConnectState {
+            DISCONNECTED = 0,
+            DISCONNECTING = 1,
+            CONNECTED = 2,
+            DISCOVERED = 3,
+            CERTIFIED = 4,
+            SOFTWARE_UPDATE = 5,
+            FAILED = 6,
+            CONNECTING = 7
+        }
+
         enum ShareExRaidPassResult {
             SHARE_EX_RAID_PASS_UNSET = 0,
             SHARE_EX_RAID_PASS_SUCCESS = 1,
@@ -7300,6 +7439,19 @@ export namespace POGOProtos {
             UPDATE_NOTIFICATION = 10103,
             OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 10104,
             GET_INBOX = 10105
+        }
+
+        enum SocialNotificationCategory {
+            unset__social_notification_category = 0,
+            FRIEND_INVITE_RECEIVED = 1,
+            FRIEND_INVITE_ACCEPTED = 2
+        }
+
+        enum SocialNotificationVariableName {
+            unset__social_notification_variable_name = 0,
+            SOCIAL_CODENAME = 1,
+            SOCIAL_TEAM = 2,
+            SOCIAL_PLAYER_SUMMARY = 3
         }
 
         enum TeamColor {
@@ -7546,6 +7698,16 @@ export namespace POGOProtos {
             PRIVACY_POLICY_CONFIRMATION = 11,
             TRADING_TUTORIAL = 12,
             POI_SUBMISSION_TUTORIAL = 13
+        }
+
+        enum UpdateType {
+            ADD = 0,
+            MODIFY = 1,
+            REMOVE = 2,
+            PREDICTED_MODIFY = 3,
+            PREDICTED_REMOVE = 4,
+            ROLLED_BACK_MODIFY = 5,
+            ROLLED_BACK_REMOVE = 6
         }
 
         enum VariableName {
