@@ -73,6 +73,7 @@ export namespace POGOProtos {
                 public add_entry?: (POGOProtos.Data.AssetCache.IJournalAddEntry|null);
                 public read_entry?: (POGOProtos.Data.AssetCache.IJournalReadEntry|null);
                 public remove_entry?: (POGOProtos.Data.AssetCache.IJournalRemoveEntry|null);
+                public Subentry?: ("add_entry"|"read_entry"|"remove_entry");
                 public static create(properties?: POGOProtos.Data.AssetCache.IJournalEntry): POGOProtos.Data.AssetCache.JournalEntry;
                 public static encode(message: POGOProtos.Data.AssetCache.IJournalEntry, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.AssetCache.IJournalEntry, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -898,6 +899,7 @@ export namespace POGOProtos {
                 public week_offset_from_now: number;
                 public metrics?: (POGOProtos.Data.Fitness.IFitnessMetrics|null);
                 public game_data: Uint8Array;
+                public Window?: ("day_offset_from_now"|"week_offset_from_now");
                 public static create(properties?: POGOProtos.Data.Fitness.IFitnessReport): POGOProtos.Data.Fitness.FitnessReport;
                 public static encode(message: POGOProtos.Data.Fitness.IFitnessReport, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Fitness.IFitnessReport, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -3066,6 +3068,7 @@ export namespace POGOProtos {
                 public story_quest_template_version: number;
                 public daily_counter?: (POGOProtos.Data.Player.IDailyCounter|null);
                 public reward_pokemon_icon_url: string;
+                public Quest?: ("daily_quest"|"multi_part"|"catch_pokemon"|"add_friend"|"trade_pokemon");
                 public static create(properties?: POGOProtos.Data.Quests.IQuest): POGOProtos.Data.Quests.Quest;
                 public static encode(message: POGOProtos.Data.Quests.IQuest, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Quests.IQuest, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -3147,6 +3150,7 @@ export namespace POGOProtos {
                 public with_badge_type?: (POGOProtos.Data.Quests.QuestCondition.IWithBadgeType|null);
                 public with_player_level?: (POGOProtos.Data.Quests.QuestCondition.IWithPlayerLevel|null);
                 public with_win_battle_status?: (POGOProtos.Data.Quests.QuestCondition.IWithWinBattleStatus|null);
+                public Condition?: ("with_pokemon_type"|"with_pokemon_category"|"with_weather_boost"|"with_daily_capture_bonus"|"with_daily_spin_bonus"|"with_win_raid_status"|"with_raid_level"|"with_throw_type"|"with_win_gym_battle_status"|"with_super_effective_charge_move"|"with_item"|"with_unique_pokestop"|"with_quest_context"|"with_badge_type"|"with_player_level"|"with_win_battle_status");
                 public static create(properties?: POGOProtos.Data.Quests.IQuestCondition): POGOProtos.Data.Quests.QuestCondition;
                 public static encode(message: POGOProtos.Data.Quests.IQuestCondition, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Quests.IQuestCondition, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -3305,6 +3309,7 @@ export namespace POGOProtos {
                     constructor(properties?: POGOProtos.Data.Quests.QuestCondition.IWithThrowType);
                     public throw_type: POGOProtos.Enums.ActivityType;
                     public hit: boolean;
+                    public Throw?: ("throw_type"|"hit");
                     public static create(properties?: POGOProtos.Data.Quests.QuestCondition.IWithThrowType): POGOProtos.Data.Quests.QuestCondition.WithThrowType;
                     public static encode(message: POGOProtos.Data.Quests.QuestCondition.IWithThrowType, writer?: $protobuf.Writer): $protobuf.Writer;
                     public static encodeDelimited(message: POGOProtos.Data.Quests.QuestCondition.IWithThrowType, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -3572,6 +3577,7 @@ export namespace POGOProtos {
                 public level?: (POGOProtos.Data.Quests.QuestPrecondition.ILevel|null);
                 public medal?: (POGOProtos.Data.Quests.QuestPrecondition.IMedal|null);
                 public quests?: (POGOProtos.Data.Quests.QuestPrecondition.IQuests|null);
+                public Condition?: ("quest_template_id"|"level"|"medal"|"quests");
                 public static create(properties?: POGOProtos.Data.Quests.IQuestPrecondition): POGOProtos.Data.Quests.QuestPrecondition;
                 public static encode(message: POGOProtos.Data.Quests.IQuestPrecondition, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Quests.IQuestPrecondition, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -3679,6 +3685,7 @@ export namespace POGOProtos {
                 public avatar_template_id: string;
                 public quest_template_id: string;
                 public pokemon_encounter?: (POGOProtos.Data.Quests.QuestReward.IPokemonEncounterReward|null);
+                public Reward?: ("exp"|"item"|"stardust"|"candy"|"avatar_template_id"|"quest_template_id"|"pokemon_encounter");
                 public static create(properties?: POGOProtos.Data.Quests.IQuestReward): POGOProtos.Data.Quests.QuestReward;
                 public static encode(message: POGOProtos.Data.Quests.IQuestReward, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Quests.IQuestReward, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -3755,6 +3762,7 @@ export namespace POGOProtos {
                     public pokemon_display?: (POGOProtos.Data.IPokemonDisplay|null);
                     public is_hidden_ditto: boolean;
                     public ditto_display?: (POGOProtos.Data.IPokemonDisplay|null);
+                    public Type?: ("pokemon_id"|"use_quest_pokemon_encounter_distribuition");
                     public static create(properties?: POGOProtos.Data.Quests.QuestReward.IPokemonEncounterReward): POGOProtos.Data.Quests.QuestReward.PokemonEncounterReward;
                     public static encode(message: POGOProtos.Data.Quests.QuestReward.IPokemonEncounterReward, writer?: $protobuf.Writer): $protobuf.Writer;
                     public static encodeDelimited(message: POGOProtos.Data.Quests.QuestReward.IPokemonEncounterReward, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -4658,6 +4666,7 @@ export namespace POGOProtos {
                 public permissions_flow?: (POGOProtos.Data.Telemetry.IPermissionsFlowTelemetry|null);
                 public device_service_toggle?: (POGOProtos.Data.Telemetry.IDeviceServiceToggleTelemetry|null);
                 public server_data?: (POGOProtos.Networking.Platform.Telemetry.IPlatformServerData|null);
+                public TelemetryData?: ("boot_time"|"frame_rate"|"generic_click_telemetry"|"map_events_telemetry"|"spin_pokestop_telemetry"|"profile_page_telemetry"|"shopping_page_telemetry"|"encounter_pokemon_telemetry"|"catch_pokemon_telemetry"|"deploy_pokemon_telemetry"|"feed_pokemon_telemetry"|"evolve_pokemon_telemetry"|"release_pokemon_telemetry"|"nickname_pokemon_telemetry"|"news_page_telemetry"|"item_telemetry"|"battle_party_telemetry"|"passcode_redeem_telemetry"|"link_login_telemetry"|"raid_telemetry"|"push_notification_telemetry"|"avatar_customization_telemetry"|"read_point_of_interest_description_telemetry"|"web_telemetry"|"change_ar_telemetry"|"weather_detail_click_telemetry"|"user_issue_weather_report"|"pokemon_inventory_telemetry"|"social_telemetry"|"check_encounter_info_telemetry"|"pokemon_go_plus_telemetry"|"rpc_timing_telemetry"|"social_gift_count_telemetry"|"asset_bundle_telemetry"|"asset_poi_download_telemetry"|"asset_stream_download_telemetry"|"asset_stream_cache_culled_telemetry"|"rpc_socket_timing_telemetry"|"permissions_flow"|"device_service_toggle"|"server_data");
                 public static create(properties?: POGOProtos.Data.Telemetry.IClientTelemetryOmni): POGOProtos.Data.Telemetry.ClientTelemetryOmni;
                 public static encode(message: POGOProtos.Data.Telemetry.IClientTelemetryOmni, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Telemetry.IClientTelemetryOmni, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -5749,11 +5758,11 @@ export namespace POGOProtos {
             UNLOADED = 0,
             LOADING = 1,
             LOADED = 2,
-            FAILED = 3
+            FAILED_ASSET_BUNDLE_STATUS = 3
         }
 
         enum AvatarCompletion {
-            SUCCESS_AvatarCompletion = 0,
+            SUCCESS_AVATAR_COMPLETION = 0,
             QUIT = 1
         }
 
@@ -5887,7 +5896,7 @@ export namespace POGOProtos {
         }
 
         enum CentralState {
-            UNKNOWN_CentralStat = 0,
+            UNKNOWN_CENTRAL_STATE = 0,
             RESETTING = 1,
             UNSUPPORTED = 2,
             UNAUTHORIZED = 3,
@@ -5906,7 +5915,7 @@ export namespace POGOProtos {
         }
 
         enum CurrencyType {
-            UNKNOWN_CurrencyType = 0,
+            UNKNOWN_CURRENCY_TYPE = 0,
             POKECOIN = 1,
             STARDUST = 2
         }
@@ -6098,7 +6107,7 @@ export namespace POGOProtos {
         }
 
         enum IncubationResult {
-            SUCCESS_IncubationResult = 0,
+            SUCCESS_INCUBATION_RESULT = 0,
             FAILURE = 1
         }
 
@@ -6144,7 +6153,7 @@ export namespace POGOProtos {
         }
 
         enum NotificationCategory {
-            UNSET_NotificationCategory = 0,
+            UNSET_NOTIFICATION_CATEGORY = 0,
             GYM_REMOVAL = 1,
             POKEMON_HUNGRY = 2,
             EXCLUSIVE_RAID_INVITE = 3,
@@ -6218,7 +6227,7 @@ export namespace POGOProtos {
         }
 
         enum PluginState {
-            UNKNOWN_PluginState = 0,
+            UNKNOWN_PLUGIN_STATE = 0,
             INITIALIZED = 1,
             STARTING = 2,
             STARTED = 3,
@@ -6235,7 +6244,7 @@ export namespace POGOProtos {
         }
 
         enum PokemonAnim {
-            NONE_PokemonAnim = 0,
+            NONE_POKEMON_ANIM = 0,
             IDLE_01 = 1,
             IDLE_02 = 2,
             LAND = 3,
@@ -7350,7 +7359,7 @@ export namespace POGOProtos {
         }
 
         enum PresentationType {
-            UNKNOWN_PresentationType = 0,
+            UNKNOWN_PRESENTATION_TYPE = 0,
             CATEGORY = 1,
             SORT = 2,
             SALE = 3
@@ -7434,21 +7443,21 @@ export namespace POGOProtos {
             INVITE_FACEBOOK_FRIEND = 10011,
             IS_MY_FRIEND = 10012,
             CREATE_INVITE_CODE = 10013,
-            REGISTER_PUSH_NOTIFICATION = 10101,
-            UNREGISTER_PUSH_NOTIFICATION = 10102,
+            REGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION = 10101,
+            UNREGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION = 10102,
             UPDATE_NOTIFICATION = 10103,
-            OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 10104,
+            OPT_OUT_PUSH_NOTIFICATION_CATEGORY_SOCIAL_ACTION = 10104,
             GET_INBOX = 10105
         }
 
         enum SocialNotificationCategory {
-            unset__social_notification_category = 0,
-            FRIEND_INVITE_RECEIVED = 1,
-            FRIEND_INVITE_ACCEPTED = 2
+            UNSET_SOCIAL_NOTIFICATION = 0,
+            FRIEND_INVITE_RECEIVED_SOCIAL_NOTIFICATION = 1,
+            FRIEND_INVITE_ACCEPTED_SOCIAL_NOTIFICATION = 2
         }
 
         enum SocialNotificationVariableName {
-            unset__social_notification_variable_name = 0,
+            UNSET_SOCIAL_NOTIFICATION_VARIABLE_NAME = 0,
             SOCIAL_CODENAME = 1,
             SOCIAL_TEAM = 2,
             SOCIAL_PLAYER_SUMMARY = 3
@@ -7690,7 +7699,7 @@ export namespace POGOProtos {
             POKEMON_CAPTURE = 3,
             NAME_SELECTION = 4,
             POKEMON_BERRY = 5,
-            USE_ITEM_TUTORIAL = 6,
+            USE_ITEM_TUTORIAL_STATE = 6,
             FIRST_TIME_EXPERIENCE_COMPLETE = 7,
             POKESTOP_TUTORIAL = 8,
             GYM_TUTORIAL = 9,
@@ -7701,9 +7710,9 @@ export namespace POGOProtos {
         }
 
         enum UpdateType {
-            ADD = 0,
+            ADD_UPDATE_TYPE = 0,
             MODIFY = 1,
-            REMOVE = 2,
+            REMOVE_UPDATE_TYPE = 2,
             PREDICTED_MODIFY = 3,
             PREDICTED_REMOVE = 4,
             ROLLED_BACK_MODIFY = 5,
@@ -7711,7 +7720,7 @@ export namespace POGOProtos {
         }
 
         enum VariableName {
-            UNSET_VariableName = 0,
+            UNSET_VARIABLE_NAME = 0,
             CODE_NAME = 1,
             TEAM = 2,
             LEVEL = 3,
@@ -7947,6 +7956,7 @@ export namespace POGOProtos {
             public modified_timestamp_ms: (number|Long);
             public deleted_item?: (POGOProtos.Inventory.InventoryItem.IDeletedItem|null);
             public inventory_item_data?: (POGOProtos.Inventory.IInventoryItemData|null);
+            public InventoryItem?: ("deleted_item"|"inventory_item_data");
             public static create(properties?: POGOProtos.Inventory.IInventoryItem): POGOProtos.Inventory.InventoryItem;
             public static encode(message: POGOProtos.Inventory.IInventoryItem, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Inventory.IInventoryItem, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -8012,6 +8022,7 @@ export namespace POGOProtos {
             public raid_tickets?: (POGOProtos.Inventory.IRaidTickets|null);
             public quests?: (POGOProtos.Data.Quests.IQuests|null);
             public gift_boxes?: (POGOProtos.Data.Gift.IGiftBoxes|null);
+            public Type?: ("pokemon_data"|"item"|"pokedex_entry"|"player_stats"|"player_currency"|"player_camera"|"inventory_upgrades"|"applied_items"|"egg_incubators"|"candy"|"quest"|"avatar_item"|"raid_tickets"|"quests"|"gift_boxes");
             public static create(properties?: POGOProtos.Inventory.IInventoryItemData): POGOProtos.Inventory.InventoryItemData;
             public static encode(message: POGOProtos.Inventory.IInventoryItemData, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Inventory.IInventoryItemData, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -8057,6 +8068,7 @@ export namespace POGOProtos {
             public raid_tickets: boolean;
             public quests: boolean;
             public gift_boxes: boolean;
+            public Type?: ("pokemon_id"|"item"|"pokedex_entry_id"|"player_stats"|"player_currency"|"player_camera"|"inventory_upgrades"|"applied_items"|"egg_incubators"|"pokemon_family_id"|"quest_type"|"avatar_template_id"|"raid_tickets"|"quests"|"gift_boxes");
             public static create(properties?: POGOProtos.Inventory.IInventoryKey): POGOProtos.Inventory.InventoryKey;
             public static encode(message: POGOProtos.Inventory.IInventoryKey, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Inventory.IInventoryKey, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -8265,6 +8277,7 @@ export namespace POGOProtos {
             public count: number;
             public experience: boolean;
             public pokemon_egg?: (POGOProtos.Data.IPokemonData|null);
+            public Type?: ("item"|"stardust"|"pokecoin"|"pokemon_candy"|"count"|"experience"|"pokemon_egg");
             public static create(properties?: POGOProtos.Inventory.ILootItem): POGOProtos.Inventory.LootItem;
             public static encode(message: POGOProtos.Inventory.ILootItem, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Inventory.ILootItem, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -10023,13 +10036,6 @@ export namespace POGOProtos {
 
                 namespace Distribution {
 
-                    enum BucketType {
-                        none = 0,
-                        linear_buckets = 1,
-                        exponential_buckets = 2,
-                        explicit_buckets = 3
-                    }
-
                     interface IBucketOptions {
                         linear_buckets?: (POGOProtos.Networking.Platform.Telemetry.Distribution.ILinearBuckets|null);
                         exponential_buckets?: (POGOProtos.Networking.Platform.Telemetry.Distribution.IExponentialBuckets|null);
@@ -10041,6 +10047,7 @@ export namespace POGOProtos {
                         public linear_buckets?: (POGOProtos.Networking.Platform.Telemetry.Distribution.ILinearBuckets|null);
                         public exponential_buckets?: (POGOProtos.Networking.Platform.Telemetry.Distribution.IExponentialBuckets|null);
                         public explicit_buckets?: (POGOProtos.Networking.Platform.Telemetry.Distribution.IExplicitBuckets|null);
+                        public BucketType?: ("linear_buckets"|"exponential_buckets"|"explicit_buckets");
                         public static create(properties?: POGOProtos.Networking.Platform.Telemetry.Distribution.IBucketOptions): POGOProtos.Networking.Platform.Telemetry.Distribution.BucketOptions;
                         public static encode(message: POGOProtos.Networking.Platform.Telemetry.Distribution.IBucketOptions, writer?: $protobuf.Writer): $protobuf.Writer;
                         public static encodeDelimited(message: POGOProtos.Networking.Platform.Telemetry.Distribution.IBucketOptions, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -10245,6 +10252,7 @@ export namespace POGOProtos {
                     public boolean_value: boolean;
                     public distribution?: (POGOProtos.Networking.Platform.Telemetry.IDistribution|null);
                     public metric_kind: POGOProtos.Networking.Platform.Telemetry.PlatformMetricData.Kind;
+                    public DatapointValue?: ("long_value"|"double_value"|"boolean_value"|"distribution");
                     public static create(properties?: POGOProtos.Networking.Platform.Telemetry.IPlatformMetricData): POGOProtos.Networking.Platform.Telemetry.PlatformMetricData;
                     public static encode(message: POGOProtos.Networking.Platform.Telemetry.IPlatformMetricData, writer?: $protobuf.Writer): $protobuf.Writer;
                     public static encodeDelimited(message: POGOProtos.Networking.Platform.Telemetry.IPlatformMetricData, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -10796,20 +10804,20 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
-                interface IDownloadSettingsMessage {
+                interface IDownloadSettingsActionMessage {
                     hash?: (string|null);
                 }
 
-                class DownloadSettingsMessage implements IDownloadSettingsMessage {
-                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IDownloadSettingsMessage);
+                class DownloadSettingsActionMessage implements IDownloadSettingsActionMessage {
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IDownloadSettingsActionMessage);
                     public hash: string;
-                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IDownloadSettingsMessage): POGOProtos.Networking.Requests.Messages.DownloadSettingsMessage;
-                    public static encode(message: POGOProtos.Networking.Requests.Messages.IDownloadSettingsMessage, writer?: $protobuf.Writer): $protobuf.Writer;
-                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IDownloadSettingsMessage, writer?: $protobuf.Writer): $protobuf.Writer;
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.DownloadSettingsMessage;
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.DownloadSettingsMessage;
-                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.DownloadSettingsMessage;
-                    public static toObject(message: POGOProtos.Networking.Requests.Messages.DownloadSettingsMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IDownloadSettingsActionMessage): POGOProtos.Networking.Requests.Messages.DownloadSettingsActionMessage;
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IDownloadSettingsActionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IDownloadSettingsActionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.DownloadSettingsActionMessage;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.DownloadSettingsActionMessage;
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.DownloadSettingsActionMessage;
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.DownloadSettingsActionMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
                     public toJSON(): { [k: string]: any };
                 }
 
@@ -14262,24 +14270,24 @@ export namespace POGOProtos {
                 }
             }
 
-            interface IDownloadSettingsResponse {
+            interface IDownloadSettingsActionResponse {
                 error?: (string|null);
                 hash?: (string|null);
                 settings?: (POGOProtos.Settings.IGlobalSettings|null);
             }
 
-            class DownloadSettingsResponse implements IDownloadSettingsResponse {
-                constructor(properties?: POGOProtos.Networking.Responses.IDownloadSettingsResponse);
+            class DownloadSettingsActionResponse implements IDownloadSettingsActionResponse {
+                constructor(properties?: POGOProtos.Networking.Responses.IDownloadSettingsActionResponse);
                 public error: string;
                 public hash: string;
                 public settings?: (POGOProtos.Settings.IGlobalSettings|null);
-                public static create(properties?: POGOProtos.Networking.Responses.IDownloadSettingsResponse): POGOProtos.Networking.Responses.DownloadSettingsResponse;
-                public static encode(message: POGOProtos.Networking.Responses.IDownloadSettingsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static encodeDelimited(message: POGOProtos.Networking.Responses.IDownloadSettingsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.DownloadSettingsResponse;
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.DownloadSettingsResponse;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.DownloadSettingsResponse;
-                public static toObject(message: POGOProtos.Networking.Responses.DownloadSettingsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static create(properties?: POGOProtos.Networking.Responses.IDownloadSettingsActionResponse): POGOProtos.Networking.Responses.DownloadSettingsActionResponse;
+                public static encode(message: POGOProtos.Networking.Responses.IDownloadSettingsActionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IDownloadSettingsActionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.DownloadSettingsActionResponse;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.DownloadSettingsActionResponse;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.DownloadSettingsActionResponse;
+                public static toObject(message: POGOProtos.Networking.Responses.DownloadSettingsActionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
 
@@ -18377,23 +18385,6 @@ export namespace POGOProtos {
             public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.ClientPerformanceSettings;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.ClientPerformanceSettings;
             public static toObject(message: POGOProtos.Settings.ClientPerformanceSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
-        interface IDownloadSettingsAction {
-            hash?: (string|null);
-        }
-
-        class DownloadSettingsAction implements IDownloadSettingsAction {
-            constructor(properties?: POGOProtos.Settings.IDownloadSettingsAction);
-            public hash: string;
-            public static create(properties?: POGOProtos.Settings.IDownloadSettingsAction): POGOProtos.Settings.DownloadSettingsAction;
-            public static encode(message: POGOProtos.Settings.IDownloadSettingsAction, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static encodeDelimited(message: POGOProtos.Settings.IDownloadSettingsAction, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.DownloadSettingsAction;
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.DownloadSettingsAction;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.DownloadSettingsAction;
-            public static toObject(message: POGOProtos.Settings.DownloadSettingsAction, options?: $protobuf.IConversionOptions): { [k: string]: any };
             public toJSON(): { [k: string]: any };
         }
 
