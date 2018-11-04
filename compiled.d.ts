@@ -2223,25 +2223,6 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
-            interface IDailyCounter {
-                window?: (number|Long|null);
-                count?: (number|null);
-            }
-
-            class DailyCounter implements IDailyCounter {
-                constructor(properties?: POGOProtos.Data.Player.IDailyCounter);
-                public window: (number|Long);
-                public count: number;
-                public static create(properties?: POGOProtos.Data.Player.IDailyCounter): POGOProtos.Data.Player.DailyCounter;
-                public static encode(message: POGOProtos.Data.Player.IDailyCounter, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static encodeDelimited(message: POGOProtos.Data.Player.IDailyCounter, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Player.DailyCounter;
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Player.DailyCounter;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Player.DailyCounter;
-                public static toObject(message: POGOProtos.Data.Player.DailyCounter, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
-            }
-
             interface IEquippedBadge {
                 badge_type?: (POGOProtos.Enums.BadgeType|null);
                 level?: (number|null);
@@ -2994,28 +2975,9 @@ export namespace POGOProtos {
                 }
             }
 
-            interface IDailyQuest {
-                current_period_bucket?: (number|null);
-                current_streak_count?: (number|null);
-            }
-
-            class DailyQuest implements IDailyQuest {
-                constructor(properties?: POGOProtos.Data.Quests.IDailyQuest);
-                public current_period_bucket: number;
-                public current_streak_count: number;
-                public static create(properties?: POGOProtos.Data.Quests.IDailyQuest): POGOProtos.Data.Quests.DailyQuest;
-                public static encode(message: POGOProtos.Data.Quests.IDailyQuest, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static encodeDelimited(message: POGOProtos.Data.Quests.IDailyQuest, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Quests.DailyQuest;
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Quests.DailyQuest;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Quests.DailyQuest;
-                public static toObject(message: POGOProtos.Data.Quests.DailyQuest, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
-            }
-
             interface IQuest {
                 quest_type?: (POGOProtos.Enums.QuestType|null);
-                daily_quest?: (POGOProtos.Data.Quests.IDailyQuest|null);
+                daily_quest?: (POGOProtos.Data.Quests.Quest.IDailyQuest|null);
                 multi_part?: (POGOProtos.Data.Quests.Quest.IMultiPartQuest|null);
                 catch_pokemon?: (POGOProtos.Data.Quests.ICatchPokemonQuest|null);
                 add_friend?: (POGOProtos.Data.Quests.IAddFriendQuest|null);
@@ -3037,14 +2999,14 @@ export namespace POGOProtos {
                 stamp_count_override?: (number|null);
                 s2_cell_id?: (number|Long|null);
                 story_quest_template_version?: (number|null);
-                daily_counter?: (POGOProtos.Data.Player.IDailyCounter|null);
+                daily_counter?: (POGOProtos.Data.Quests.Quest.IDailyCounter|null);
                 reward_pokemon_icon_url?: (string|null);
             }
 
             class Quest implements IQuest {
                 constructor(properties?: POGOProtos.Data.Quests.IQuest);
                 public quest_type: POGOProtos.Enums.QuestType;
-                public daily_quest?: (POGOProtos.Data.Quests.IDailyQuest|null);
+                public daily_quest?: (POGOProtos.Data.Quests.Quest.IDailyQuest|null);
                 public multi_part?: (POGOProtos.Data.Quests.Quest.IMultiPartQuest|null);
                 public catch_pokemon?: (POGOProtos.Data.Quests.ICatchPokemonQuest|null);
                 public add_friend?: (POGOProtos.Data.Quests.IAddFriendQuest|null);
@@ -3066,7 +3028,7 @@ export namespace POGOProtos {
                 public stamp_count_override: number;
                 public s2_cell_id: (number|Long);
                 public story_quest_template_version: number;
-                public daily_counter?: (POGOProtos.Data.Player.IDailyCounter|null);
+                public daily_counter?: (POGOProtos.Data.Quests.Quest.IDailyCounter|null);
                 public reward_pokemon_icon_url: string;
                 public Quest?: ("daily_quest"|"multi_part"|"catch_pokemon"|"add_friend"|"trade_pokemon");
                 public static create(properties?: POGOProtos.Data.Quests.IQuest): POGOProtos.Data.Quests.Quest;
@@ -3095,6 +3057,44 @@ export namespace POGOProtos {
                     public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Quests.Quest.MultiPartQuest;
                     public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Quests.Quest.MultiPartQuest;
                     public static toObject(message: POGOProtos.Data.Quests.Quest.MultiPartQuest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public toJSON(): { [k: string]: any };
+                }
+
+                interface IDailyQuest {
+                    current_period_bucket?: (number|null);
+                    current_streak_count?: (number|null);
+                }
+
+                class DailyQuest implements IDailyQuest {
+                    constructor(properties?: POGOProtos.Data.Quests.Quest.IDailyQuest);
+                    public current_period_bucket: number;
+                    public current_streak_count: number;
+                    public static create(properties?: POGOProtos.Data.Quests.Quest.IDailyQuest): POGOProtos.Data.Quests.Quest.DailyQuest;
+                    public static encode(message: POGOProtos.Data.Quests.Quest.IDailyQuest, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: POGOProtos.Data.Quests.Quest.IDailyQuest, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Quests.Quest.DailyQuest;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Quests.Quest.DailyQuest;
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Quests.Quest.DailyQuest;
+                    public static toObject(message: POGOProtos.Data.Quests.Quest.DailyQuest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public toJSON(): { [k: string]: any };
+                }
+
+                interface IDailyCounter {
+                    window?: (number|Long|null);
+                    count?: (number|null);
+                }
+
+                class DailyCounter implements IDailyCounter {
+                    constructor(properties?: POGOProtos.Data.Quests.Quest.IDailyCounter);
+                    public window: (number|Long);
+                    public count: number;
+                    public static create(properties?: POGOProtos.Data.Quests.Quest.IDailyCounter): POGOProtos.Data.Quests.Quest.DailyCounter;
+                    public static encode(message: POGOProtos.Data.Quests.Quest.IDailyCounter, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: POGOProtos.Data.Quests.Quest.IDailyCounter, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Quests.Quest.DailyCounter;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Quests.Quest.DailyCounter;
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Quests.Quest.DailyCounter;
+                    public static toObject(message: POGOProtos.Data.Quests.Quest.DailyCounter, options?: $protobuf.IConversionOptions): { [k: string]: any };
                     public toJSON(): { [k: string]: any };
                 }
 
