@@ -667,6 +667,235 @@ export namespace POGOProtos {
             }
         }
 
+        namespace Beluga {
+
+            interface IBelugaBleCompleteTransferRequest {
+                transaction_id?: (number|Long|null);
+                beluga_requested_item_id?: (number|null);
+                nonce?: (string|null);
+            }
+
+            class BelugaBleCompleteTransferRequest implements IBelugaBleCompleteTransferRequest {
+                constructor(properties?: POGOProtos.Data.Beluga.IBelugaBleCompleteTransferRequest);
+                public transaction_id: (number|Long);
+                public beluga_requested_item_id: number;
+                public nonce: string;
+                public static create(properties?: POGOProtos.Data.Beluga.IBelugaBleCompleteTransferRequest): POGOProtos.Data.Beluga.BelugaBleCompleteTransferRequest;
+                public static encode(message: POGOProtos.Data.Beluga.IBelugaBleCompleteTransferRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Beluga.IBelugaBleCompleteTransferRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Beluga.BelugaBleCompleteTransferRequest;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Beluga.BelugaBleCompleteTransferRequest;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Beluga.BelugaBleCompleteTransferRequest;
+                public static toObject(message: POGOProtos.Data.Beluga.BelugaBleCompleteTransferRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaBleFinalizeTransfer {
+                beluga_transfer_complete?: (POGOProtos.Data.Beluga.IBelugaBleTransferComplete|null);
+                server_signature?: (Uint8Array|null);
+            }
+
+            class BelugaBleFinalizeTransfer implements IBelugaBleFinalizeTransfer {
+                constructor(properties?: POGOProtos.Data.Beluga.IBelugaBleFinalizeTransfer);
+                public beluga_transfer_complete?: (POGOProtos.Data.Beluga.IBelugaBleTransferComplete|null);
+                public server_signature: Uint8Array;
+                public static create(properties?: POGOProtos.Data.Beluga.IBelugaBleFinalizeTransfer): POGOProtos.Data.Beluga.BelugaBleFinalizeTransfer;
+                public static encode(message: POGOProtos.Data.Beluga.IBelugaBleFinalizeTransfer, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Beluga.IBelugaBleFinalizeTransfer, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Beluga.BelugaBleFinalizeTransfer;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Beluga.BelugaBleFinalizeTransfer;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Beluga.BelugaBleFinalizeTransfer;
+                public static toObject(message: POGOProtos.Data.Beluga.BelugaBleFinalizeTransfer, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaBleTransferProto {
+                server_response?: (POGOProtos.Data.Beluga.IBelugaBleTransferPrep|null);
+                server_signature?: (Uint8Array|null);
+                localized_origins?: (string[]|null);
+                language?: (string|null);
+            }
+
+            class BelugaBleTransferProto implements IBelugaBleTransferProto {
+                constructor(properties?: POGOProtos.Data.Beluga.IBelugaBleTransferProto);
+                public server_response?: (POGOProtos.Data.Beluga.IBelugaBleTransferPrep|null);
+                public server_signature: Uint8Array;
+                public localized_origins: string[];
+                public language: string;
+                public static create(properties?: POGOProtos.Data.Beluga.IBelugaBleTransferProto): POGOProtos.Data.Beluga.BelugaBleTransferProto;
+                public static encode(message: POGOProtos.Data.Beluga.IBelugaBleTransferProto, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Beluga.IBelugaBleTransferProto, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Beluga.BelugaBleTransferProto;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Beluga.BelugaBleTransferProto;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Beluga.BelugaBleTransferProto;
+                public static toObject(message: POGOProtos.Data.Beluga.BelugaBleTransferProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaBleTransferComplete {
+                nonce?: (string|null);
+                beluga_id?: (string|null);
+            }
+
+            class BelugaBleTransferComplete implements IBelugaBleTransferComplete {
+                constructor(properties?: POGOProtos.Data.Beluga.IBelugaBleTransferComplete);
+                public nonce: string;
+                public beluga_id: string;
+                public static create(properties?: POGOProtos.Data.Beluga.IBelugaBleTransferComplete): POGOProtos.Data.Beluga.BelugaBleTransferComplete;
+                public static encode(message: POGOProtos.Data.Beluga.IBelugaBleTransferComplete, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Beluga.IBelugaBleTransferComplete, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Beluga.BelugaBleTransferComplete;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Beluga.BelugaBleTransferComplete;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Beluga.BelugaBleTransferComplete;
+                public static toObject(message: POGOProtos.Data.Beluga.BelugaBleTransferComplete, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaBleTransferPrep {
+                pokemon_list?: (POGOProtos.Data.Beluga.IBelugaPokemon[]|null);
+                eligble_for_item?: (boolean|null);
+                transaction_id?: (number|Long|null);
+                beluga_id?: (string|null);
+                nonce?: (string|null);
+            }
+
+            class BelugaBleTransferPrep implements IBelugaBleTransferPrep {
+                constructor(properties?: POGOProtos.Data.Beluga.IBelugaBleTransferPrep);
+                public pokemon_list: POGOProtos.Data.Beluga.IBelugaPokemon[];
+                public eligble_for_item: boolean;
+                public transaction_id: (number|Long);
+                public beluga_id: string;
+                public nonce: string;
+                public static create(properties?: POGOProtos.Data.Beluga.IBelugaBleTransferPrep): POGOProtos.Data.Beluga.BelugaBleTransferPrep;
+                public static encode(message: POGOProtos.Data.Beluga.IBelugaBleTransferPrep, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Beluga.IBelugaBleTransferPrep, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Beluga.BelugaBleTransferPrep;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Beluga.BelugaBleTransferPrep;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Beluga.BelugaBleTransferPrep;
+                public static toObject(message: POGOProtos.Data.Beluga.BelugaBleTransferPrep, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaIncenseBox {
+                is_usable?: (boolean|null);
+                cool_down_finished_timestamp_ms?: (number|Long|null);
+            }
+
+            class BelugaIncenseBox implements IBelugaIncenseBox {
+                constructor(properties?: POGOProtos.Data.Beluga.IBelugaIncenseBox);
+                public is_usable: boolean;
+                public cool_down_finished_timestamp_ms: (number|Long);
+                public static create(properties?: POGOProtos.Data.Beluga.IBelugaIncenseBox): POGOProtos.Data.Beluga.BelugaIncenseBox;
+                public static encode(message: POGOProtos.Data.Beluga.IBelugaIncenseBox, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Beluga.IBelugaIncenseBox, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Beluga.BelugaIncenseBox;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Beluga.BelugaIncenseBox;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Beluga.BelugaIncenseBox;
+                public static toObject(message: POGOProtos.Data.Beluga.BelugaIncenseBox, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaPokemon {
+                trainer_name?: (string|null);
+                trainer_gender?: (POGOProtos.Data.Beluga.BelugaPokemon.TrainerGender|null);
+                trainer_team?: (POGOProtos.Data.Beluga.BelugaPokemon.Team|null);
+                trainer_level?: (number|null);
+                pokedex_id?: (number|null);
+                cp?: (number|null);
+                pokemon_level?: (number|null);
+                max_hp?: (number|null);
+                origin_lat?: (number|null);
+                origin_lng?: (number|null);
+                height?: (number|null);
+                weight?: (number|null);
+                individual_attack?: (number|null);
+                individual_defense?: (number|null);
+                individual_stamina?: (number|null);
+                creation_day?: (number|null);
+                creation_month?: (number|null);
+                creation_year?: (number|null);
+                nickname?: (string|null);
+                gender?: (POGOProtos.Data.Beluga.BelugaPokemon.PokemonGender|null);
+                costume?: (POGOProtos.Data.Beluga.BelugaPokemon.PokemonCostume|null);
+                form?: (POGOProtos.Data.Beluga.BelugaPokemon.PokemonForm|null);
+                shiny?: (boolean|null);
+                move1?: (number|null);
+                move2?: (number|null);
+            }
+
+            class BelugaPokemon implements IBelugaPokemon {
+                constructor(properties?: POGOProtos.Data.Beluga.IBelugaPokemon);
+                public trainer_name: string;
+                public trainer_gender: POGOProtos.Data.Beluga.BelugaPokemon.TrainerGender;
+                public trainer_team: POGOProtos.Data.Beluga.BelugaPokemon.Team;
+                public trainer_level: number;
+                public pokedex_id: number;
+                public cp: number;
+                public pokemon_level: number;
+                public max_hp: number;
+                public origin_lat: number;
+                public origin_lng: number;
+                public height: number;
+                public weight: number;
+                public individual_attack: number;
+                public individual_defense: number;
+                public individual_stamina: number;
+                public creation_day: number;
+                public creation_month: number;
+                public creation_year: number;
+                public nickname: string;
+                public gender: POGOProtos.Data.Beluga.BelugaPokemon.PokemonGender;
+                public costume: POGOProtos.Data.Beluga.BelugaPokemon.PokemonCostume;
+                public form: POGOProtos.Data.Beluga.BelugaPokemon.PokemonForm;
+                public shiny: boolean;
+                public move1: number;
+                public move2: number;
+                public static create(properties?: POGOProtos.Data.Beluga.IBelugaPokemon): POGOProtos.Data.Beluga.BelugaPokemon;
+                public static encode(message: POGOProtos.Data.Beluga.IBelugaPokemon, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Beluga.IBelugaPokemon, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Beluga.BelugaPokemon;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Beluga.BelugaPokemon;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Beluga.BelugaPokemon;
+                public static toObject(message: POGOProtos.Data.Beluga.BelugaPokemon, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace BelugaPokemon {
+
+                enum PokemonCostume {
+                    UNSET = 0,
+                    HOLIDAY_2016 = 1,
+                    ANNIVERSARY = 2,
+                    ONE_YEAR_ANNIVERSARY = 3,
+                    HALLOWEEN_2017 = 4
+                }
+
+                enum PokemonForm {
+                    FORM_UNSET = 0,
+                    ALOLA = 1
+                }
+
+                enum PokemonGender {
+                    GENDER_UNSET = 0,
+                    MALE = 1,
+                    FEMALE = 2,
+                    GENDERLESS = 3
+                }
+
+                enum Team {
+                    NONE = 0,
+                    TEAM_BLUE = 1,
+                    TEAM_RED = 2,
+                    TEAM_YELLOW = 3
+                }
+
+                enum TrainerGender {
+                    TRAINER_MALE = 0,
+                    TRAINER_FEMALE = 1
+                }
+            }
+        }
+
         interface IBuddyPokemon {
             id?: (number|Long|null);
             start_km_walked?: (number|null);
@@ -1614,6 +1843,7 @@ export namespace POGOProtos {
                 complete_quest?: (POGOProtos.Data.Logs.ICompleteQuestLogEntry|null);
                 complete_quest_stamp_card?: (POGOProtos.Data.Logs.ICompleteQuestStampCardLogEntry|null);
                 complete_quest_pokemon_encounter?: (POGOProtos.Data.Logs.ICompleteQuestPokemonEncounterLogEntry|null);
+                beluga_transfer?: (POGOProtos.Data.Logs.IBelugaDailyTransferLogEntry|null);
                 open_gift?: (POGOProtos.Data.Logs.IOpenGiftLogEntry|null);
                 send_gift?: (POGOProtos.Data.Logs.ISendGiftLogEntry|null);
                 trading?: (POGOProtos.Data.Logs.ITradingLogEntry|null);
@@ -1634,13 +1864,14 @@ export namespace POGOProtos {
                 public complete_quest?: (POGOProtos.Data.Logs.ICompleteQuestLogEntry|null);
                 public complete_quest_stamp_card?: (POGOProtos.Data.Logs.ICompleteQuestStampCardLogEntry|null);
                 public complete_quest_pokemon_encounter?: (POGOProtos.Data.Logs.ICompleteQuestPokemonEncounterLogEntry|null);
+                public beluga_transfer?: (POGOProtos.Data.Logs.IBelugaDailyTransferLogEntry|null);
                 public open_gift?: (POGOProtos.Data.Logs.IOpenGiftLogEntry|null);
                 public send_gift?: (POGOProtos.Data.Logs.ISendGiftLogEntry|null);
                 public trading?: (POGOProtos.Data.Logs.ITradingLogEntry|null);
                 public share_ex_raid_pass?: (POGOProtos.Data.Logs.IShareExRaidPassLogEntry|null);
                 public decline_ex_raid_pass?: (POGOProtos.Data.Logs.IDeclineExRaidPassLogEntry|null);
                 public fitness_rewards?: (POGOProtos.Data.Logs.IFitnessRewardsLogEntry|null);
-                public Action?: ("catch_pokemon"|"fort_search"|"buddy_pokemon"|"raid_rewards"|"passcode_rewards"|"complete_quest"|"complete_quest_stamp_card"|"complete_quest_pokemon_encounter"|"open_gift"|"send_gift"|"trading"|"share_ex_raid_pass"|"decline_ex_raid_pass"|"fitness_rewards");
+                public Action?: ("catch_pokemon"|"fort_search"|"buddy_pokemon"|"raid_rewards"|"passcode_rewards"|"complete_quest"|"complete_quest_stamp_card"|"complete_quest_pokemon_encounter"|"beluga_transfer"|"open_gift"|"send_gift"|"trading"|"share_ex_raid_pass"|"decline_ex_raid_pass"|"fitness_rewards");
                 public static create(properties?: POGOProtos.Data.Logs.IActionLogEntry): POGOProtos.Data.Logs.ActionLogEntry;
                 public static encode(message: POGOProtos.Data.Logs.IActionLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Logs.IActionLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -1649,6 +1880,35 @@ export namespace POGOProtos {
                 public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Logs.ActionLogEntry;
                 public static toObject(message: POGOProtos.Data.Logs.ActionLogEntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaDailyTransferLogEntry {
+                result?: (POGOProtos.Data.Logs.BelugaDailyTransferLogEntry.Result|null);
+                includes_weekly_bonus?: (boolean|null);
+                items_awarded?: (POGOProtos.Inventory.ILoot|null);
+            }
+
+            class BelugaDailyTransferLogEntry implements IBelugaDailyTransferLogEntry {
+                constructor(properties?: POGOProtos.Data.Logs.IBelugaDailyTransferLogEntry);
+                public result: POGOProtos.Data.Logs.BelugaDailyTransferLogEntry.Result;
+                public includes_weekly_bonus: boolean;
+                public items_awarded?: (POGOProtos.Inventory.ILoot|null);
+                public static create(properties?: POGOProtos.Data.Logs.IBelugaDailyTransferLogEntry): POGOProtos.Data.Logs.BelugaDailyTransferLogEntry;
+                public static encode(message: POGOProtos.Data.Logs.IBelugaDailyTransferLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Logs.IBelugaDailyTransferLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Logs.BelugaDailyTransferLogEntry;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Logs.BelugaDailyTransferLogEntry;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Logs.BelugaDailyTransferLogEntry;
+                public static toObject(message: POGOProtos.Data.Logs.BelugaDailyTransferLogEntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace BelugaDailyTransferLogEntry {
+
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1
+                }
             }
 
             interface IBuddyPokemonLogEntry {
@@ -4264,6 +4524,29 @@ export namespace POGOProtos {
             }
         }
 
+        interface ISetInGameCurrencyExchangeRateTracking {
+            in_game_currency?: (string|null);
+            fiat_currency?: (string|null);
+            fiat_currency_cost_e6_per_in_game_unit?: (number|Long|null);
+            status?: (string|null);
+        }
+
+        class SetInGameCurrencyExchangeRateTracking implements ISetInGameCurrencyExchangeRateTracking {
+            constructor(properties?: POGOProtos.Data.ISetInGameCurrencyExchangeRateTracking);
+            public in_game_currency: string;
+            public fiat_currency: string;
+            public fiat_currency_cost_e6_per_in_game_unit: (number|Long);
+            public status: string;
+            public static create(properties?: POGOProtos.Data.ISetInGameCurrencyExchangeRateTracking): POGOProtos.Data.SetInGameCurrencyExchangeRateTracking;
+            public static encode(message: POGOProtos.Data.ISetInGameCurrencyExchangeRateTracking, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: POGOProtos.Data.ISetInGameCurrencyExchangeRateTracking, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.SetInGameCurrencyExchangeRateTracking;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.SetInGameCurrencyExchangeRateTracking;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Data.SetInGameCurrencyExchangeRateTracking;
+            public static toObject(message: POGOProtos.Data.SetInGameCurrencyExchangeRateTracking, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         namespace Sfida {
 
             interface ISfidaMetrics {
@@ -4473,6 +4756,25 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
+            interface IBootTelemetry {
+                nearest_poi_distance?: (number|null);
+                poi_within_one_km_count?: (number|null);
+            }
+
+            class BootTelemetry implements IBootTelemetry {
+                constructor(properties?: POGOProtos.Data.Telemetry.IBootTelemetry);
+                public nearest_poi_distance: number;
+                public poi_within_one_km_count: number;
+                public static create(properties?: POGOProtos.Data.Telemetry.IBootTelemetry): POGOProtos.Data.Telemetry.BootTelemetry;
+                public static encode(message: POGOProtos.Data.Telemetry.IBootTelemetry, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Data.Telemetry.IBootTelemetry, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Telemetry.BootTelemetry;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Telemetry.BootTelemetry;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Telemetry.BootTelemetry;
+                public static toObject(message: POGOProtos.Data.Telemetry.BootTelemetry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
             interface IBootTime {
                 duration?: (POGOProtos.Networking.Platform.Telemetry.IPlatformMetricData|null);
                 boot_phase?: (POGOProtos.Data.Telemetry.BootTime.BootPhase|null);
@@ -4510,7 +4812,8 @@ export namespace POGOProtos {
                     INITIALIZE_CRITTERCISM = 12,
                     LOGIN_VERSION_CHECK = 13,
                     LOGIN_GET_PLAYER = 14,
-                    LOGIN_AUTHENTICATION = 15
+                    LOGIN_AUTHENTICATION = 15,
+                    MODAL_TIME = 16
                 }
             }
 
@@ -4620,6 +4923,7 @@ export namespace POGOProtos {
                 rpc_socket_timing_telemetry?: (POGOProtos.Data.Telemetry.IRpcSocketResponseTelemetry|null);
                 permissions_flow?: (POGOProtos.Data.Telemetry.IPermissionsFlowTelemetry|null);
                 device_service_toggle?: (POGOProtos.Data.Telemetry.IDeviceServiceToggleTelemetry|null);
+                boot_telemetry?: (POGOProtos.Data.Telemetry.IBootTelemetry|null);
                 server_data?: (POGOProtos.Networking.Platform.Telemetry.IPlatformServerData|null);
             }
 
@@ -4665,8 +4969,9 @@ export namespace POGOProtos {
                 public rpc_socket_timing_telemetry?: (POGOProtos.Data.Telemetry.IRpcSocketResponseTelemetry|null);
                 public permissions_flow?: (POGOProtos.Data.Telemetry.IPermissionsFlowTelemetry|null);
                 public device_service_toggle?: (POGOProtos.Data.Telemetry.IDeviceServiceToggleTelemetry|null);
+                public boot_telemetry?: (POGOProtos.Data.Telemetry.IBootTelemetry|null);
                 public server_data?: (POGOProtos.Networking.Platform.Telemetry.IPlatformServerData|null);
-                public TelemetryData?: ("boot_time"|"frame_rate"|"generic_click_telemetry"|"map_events_telemetry"|"spin_pokestop_telemetry"|"profile_page_telemetry"|"shopping_page_telemetry"|"encounter_pokemon_telemetry"|"catch_pokemon_telemetry"|"deploy_pokemon_telemetry"|"feed_pokemon_telemetry"|"evolve_pokemon_telemetry"|"release_pokemon_telemetry"|"nickname_pokemon_telemetry"|"news_page_telemetry"|"item_telemetry"|"battle_party_telemetry"|"passcode_redeem_telemetry"|"link_login_telemetry"|"raid_telemetry"|"push_notification_telemetry"|"avatar_customization_telemetry"|"read_point_of_interest_description_telemetry"|"web_telemetry"|"change_ar_telemetry"|"weather_detail_click_telemetry"|"user_issue_weather_report"|"pokemon_inventory_telemetry"|"social_telemetry"|"check_encounter_info_telemetry"|"pokemon_go_plus_telemetry"|"rpc_timing_telemetry"|"social_gift_count_telemetry"|"asset_bundle_telemetry"|"asset_poi_download_telemetry"|"asset_stream_download_telemetry"|"asset_stream_cache_culled_telemetry"|"rpc_socket_timing_telemetry"|"permissions_flow"|"device_service_toggle"|"server_data");
+                public TelemetryData?: ("boot_time"|"frame_rate"|"generic_click_telemetry"|"map_events_telemetry"|"spin_pokestop_telemetry"|"profile_page_telemetry"|"shopping_page_telemetry"|"encounter_pokemon_telemetry"|"catch_pokemon_telemetry"|"deploy_pokemon_telemetry"|"feed_pokemon_telemetry"|"evolve_pokemon_telemetry"|"release_pokemon_telemetry"|"nickname_pokemon_telemetry"|"news_page_telemetry"|"item_telemetry"|"battle_party_telemetry"|"passcode_redeem_telemetry"|"link_login_telemetry"|"raid_telemetry"|"push_notification_telemetry"|"avatar_customization_telemetry"|"read_point_of_interest_description_telemetry"|"web_telemetry"|"change_ar_telemetry"|"weather_detail_click_telemetry"|"user_issue_weather_report"|"pokemon_inventory_telemetry"|"social_telemetry"|"check_encounter_info_telemetry"|"pokemon_go_plus_telemetry"|"rpc_timing_telemetry"|"social_gift_count_telemetry"|"asset_bundle_telemetry"|"asset_poi_download_telemetry"|"asset_stream_download_telemetry"|"asset_stream_cache_culled_telemetry"|"rpc_socket_timing_telemetry"|"permissions_flow"|"device_service_toggle"|"boot_telemetry"|"server_data");
                 public static create(properties?: POGOProtos.Data.Telemetry.IClientTelemetryOmni): POGOProtos.Data.Telemetry.ClientTelemetryOmni;
                 public static encode(message: POGOProtos.Data.Telemetry.IClientTelemetryOmni, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Telemetry.IClientTelemetryOmni, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -5638,6 +5943,7 @@ export namespace POGOProtos {
                 individual_stamina?: (number|null);
                 nickname?: (string|null);
                 favorite?: (boolean|null);
+                creation_time_ms?: (number|Long|null);
             }
 
             class TradingPokemon implements ITradingPokemon {
@@ -5662,6 +5968,7 @@ export namespace POGOProtos {
                 public individual_stamina: number;
                 public nickname: string;
                 public favorite: boolean;
+                public creation_time_ms: (number|Long);
                 public static create(properties?: POGOProtos.Data.Trading.ITradingPokemon): POGOProtos.Data.Trading.TradingPokemon;
                 public static encode(message: POGOProtos.Data.Trading.ITradingPokemon, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Trading.ITradingPokemon, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -5911,7 +6218,8 @@ export namespace POGOProtos {
             ONE_YEAR_ANNIVERSARY = 3,
             HALLOWEEN_2017 = 4,
             SUMMER_2018 = 5,
-            FALL_2018 = 6
+            FALL_2018 = 6,
+            NOVEMBER_2018 = 7
         }
 
         enum CurrencyType {
@@ -6156,18 +6464,18 @@ export namespace POGOProtos {
             UNSET_NOTIFICATION_CATEGORY = 0,
             GYM_REMOVAL = 1,
             POKEMON_HUNGRY = 2,
-            EXCLUSIVE_RAID_INVITE = 3,
-            EXCLUSIVE_RAID_CANCELLATION = 4,
-            SHARED_EXCLUSIVE_RAID_INVITE = 5,
+            POKEMON_WON = 3,
+            EXCLUSIVE_RAID_INVITE = 4,
+            EXCLUSIVE_RAID_CANCELLATION = 5,
             GIFTBOX_INCOMING = 6,
             GIFTBOX_DELIVERED = 7,
             FRIENDSHIP_MILESTONE_REWARD = 8,
             GYM_BATTLE_FRIENDSHIP_INCREMENT = 9,
-            BGMODE_EGG_HATCH = 10,
-            BGMODE_BUDDY_CANDY = 11,
-            BGMODE_WEEKLY_FITNESS_REPORT = 12,
-            FRIEND_INVITE_RECEIVED = 13,
-            FRIEND_INVITE_ACCEPTED = 14
+            SHARED_EXCLUSIVE_RAID_INVITE = 10,
+            BGMODE_EGG_HATCH = 11,
+            BGMODE_BUDDY_CANDY = 12,
+            BGMODE_WEEKLY_FITNESS_REPORT = 13,
+            BGMODE_OFF_SESSION_DISTANCE = 15
         }
 
         enum NotificationState {
@@ -6223,7 +6531,8 @@ export namespace POGOProtos {
             PING_ASYNC = 5027,
             REGISTER_BACKGROUND_SERVICE = 5028,
             GET_CLIENT_BGMODE_SETTINGS = 5029,
-            PING_DOWNSTREAM = 5030
+            PING_DOWNSTREAM = 5030,
+            SET_IN_GAME_CURRENCY_EXCHANGE_RATE = 5032
         }
 
         enum PluginState {
@@ -6519,7 +6828,8 @@ export namespace POGOProtos {
             FAMILY_MANAPHY = 490,
             FAMILY_DARKRAI = 491,
             FAMILY_SHAYMIN = 492,
-            FAMILY_ARCEUS = 493
+            FAMILY_ARCEUS = 493,
+            FAMILY_MELTAN = 808
         }
 
         enum PokemonGoPlusIds {
@@ -6539,6 +6849,11 @@ export namespace POGOProtos {
             POKEMON_NOT_CAUGHT_DUE_ERROR = 13,
             POKESTOP_SPUN = 14,
             POKESTOP_NOT_SPUN_DUE_ERROR = 15
+        }
+
+        enum DeviceKind {
+            POKEMON_GO_PLUS_KIND = 0,
+            POKE_BALL_PLUS = 1
         }
 
         enum PokemonId {
@@ -7035,7 +7350,9 @@ export namespace POGOProtos {
             MANAPHY = 490,
             DARKRAI = 491,
             SHAYMIN = 492,
-            ARCEUS = 493
+            ARCEUS = 493,
+            MELTAN = 808,
+            MELMETAL = 809
         }
 
         enum PokemonMove {
@@ -7544,7 +7861,8 @@ export namespace POGOProtos {
             ASSET_STREAM_CACHE_CULLED = 37,
             RPC_SOCKET_TIMING = 38,
             PERMISSIONS_FLOW = 39,
-            DEVICE_SERVICE_TOGGLE = 40
+            DEVICE_SERVICE_TOGGLE = 40,
+            BOOT_TELEMETRY = 41
         }
 
         enum AvatarCustomizationTelemetryIds {
@@ -7706,7 +8024,14 @@ export namespace POGOProtos {
             CHALLENGE_QUEST_TUTORIAL = 10,
             PRIVACY_POLICY_CONFIRMATION = 11,
             TRADING_TUTORIAL = 12,
-            POI_SUBMISSION_TUTORIAL = 13
+            POI_SUBMISSION_TUTORIAL = 13,
+            V1_START_TUTORIAL = 14,
+            V2_START_TUTORIAL = 15,
+            V2_CUSTOMIZED_AVATAR = 16,
+            V2_CAUGHT_STARTER = 17,
+            V2_FINISHED_TUTORIAL_CATCHES = 18,
+            V2_NAME_SELECTION = 19,
+            V2_EGG_GIVEN = 20
         }
 
         enum UpdateType {
@@ -7756,7 +8081,8 @@ export namespace POGOProtos {
             GIFT_EGG = 1024,
             FRIENDSHIP_MILESTONE_REWARD_DETAILS = 1025,
             FRIENDSHIP_LEVEL_DISPLAY = 1026,
-            BGMODE_BUDDY_POKEMON_NICKNAME = 1027
+            BGMODE_BUDDY_POKEMON_NICKNAME = 1027,
+            BGMODE_OFF_SESSION_DISTANCE_KM = 1030
         }
 
         enum WeatherCondition {
@@ -8003,6 +8329,7 @@ export namespace POGOProtos {
             raid_tickets?: (POGOProtos.Inventory.IRaidTickets|null);
             quests?: (POGOProtos.Data.Quests.IQuests|null);
             gift_boxes?: (POGOProtos.Data.Gift.IGiftBoxes|null);
+            beluga_incense?: (POGOProtos.Data.Beluga.IBelugaIncenseBox|null);
         }
 
         class InventoryItemData implements IInventoryItemData {
@@ -8022,7 +8349,8 @@ export namespace POGOProtos {
             public raid_tickets?: (POGOProtos.Inventory.IRaidTickets|null);
             public quests?: (POGOProtos.Data.Quests.IQuests|null);
             public gift_boxes?: (POGOProtos.Data.Gift.IGiftBoxes|null);
-            public Type?: ("pokemon_data"|"item"|"pokedex_entry"|"player_stats"|"player_currency"|"player_camera"|"inventory_upgrades"|"applied_items"|"egg_incubators"|"candy"|"quest"|"avatar_item"|"raid_tickets"|"quests"|"gift_boxes");
+            public beluga_incense?: (POGOProtos.Data.Beluga.IBelugaIncenseBox|null);
+            public Type?: ("pokemon_data"|"item"|"pokedex_entry"|"player_stats"|"player_currency"|"player_camera"|"inventory_upgrades"|"applied_items"|"egg_incubators"|"candy"|"quest"|"avatar_item"|"raid_tickets"|"quests"|"gift_boxes"|"beluga_incense");
             public static create(properties?: POGOProtos.Inventory.IInventoryItemData): POGOProtos.Inventory.InventoryItemData;
             public static encode(message: POGOProtos.Inventory.IInventoryItemData, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Inventory.IInventoryItemData, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -8049,6 +8377,7 @@ export namespace POGOProtos {
             raid_tickets?: (boolean|null);
             quests?: (boolean|null);
             gift_boxes?: (boolean|null);
+            beluga_incense_box?: (boolean|null);
         }
 
         class InventoryKey implements IInventoryKey {
@@ -8068,7 +8397,8 @@ export namespace POGOProtos {
             public raid_tickets: boolean;
             public quests: boolean;
             public gift_boxes: boolean;
-            public Type?: ("pokemon_id"|"item"|"pokedex_entry_id"|"player_stats"|"player_currency"|"player_camera"|"inventory_upgrades"|"applied_items"|"egg_incubators"|"pokemon_family_id"|"quest_type"|"avatar_template_id"|"raid_tickets"|"quests"|"gift_boxes");
+            public beluga_incense_box: boolean;
+            public Type?: ("pokemon_id"|"item"|"pokedex_entry_id"|"player_stats"|"player_currency"|"player_camera"|"inventory_upgrades"|"applied_items"|"egg_incubators"|"pokemon_family_id"|"quest_type"|"avatar_template_id"|"raid_tickets"|"quests"|"gift_boxes"|"beluga_incense_box");
             public static create(properties?: POGOProtos.Inventory.IInventoryKey): POGOProtos.Inventory.InventoryKey;
             public static encode(message: POGOProtos.Inventory.IInventoryKey, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Inventory.IInventoryKey, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -8185,6 +8515,7 @@ export namespace POGOProtos {
                 ITEM_INCENSE_SPICY = 402,
                 ITEM_INCENSE_COOL = 403,
                 ITEM_INCENSE_FLORAL = 404,
+                ITEM_INCENSE_BELUGA_BOX = 405,
                 ITEM_TROY_DISK = 501,
                 ITEM_X_ATTACK = 602,
                 ITEM_X_DEFENSE = 603,
@@ -10450,6 +10781,48 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                interface IBelugaTransactionCompleteMessage {
+                    beluga_transfer?: (POGOProtos.Data.Beluga.IBelugaBleCompleteTransferRequest|null);
+                    app_signature?: (Uint8Array|null);
+                    firmware_signature?: (Uint8Array|null);
+                }
+
+                class BelugaTransactionCompleteMessage implements IBelugaTransactionCompleteMessage {
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IBelugaTransactionCompleteMessage);
+                    public beluga_transfer?: (POGOProtos.Data.Beluga.IBelugaBleCompleteTransferRequest|null);
+                    public app_signature: Uint8Array;
+                    public firmware_signature: Uint8Array;
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IBelugaTransactionCompleteMessage): POGOProtos.Networking.Requests.Messages.BelugaTransactionCompleteMessage;
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IBelugaTransactionCompleteMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IBelugaTransactionCompleteMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.BelugaTransactionCompleteMessage;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.BelugaTransactionCompleteMessage;
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.BelugaTransactionCompleteMessage;
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.BelugaTransactionCompleteMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public toJSON(): { [k: string]: any };
+                }
+
+                interface IBelugaTransactionStartMessage {
+                    pokemon_id?: ((number|Long)[]|null);
+                    nonce?: (string|null);
+                    beluga_id?: (string|null);
+                }
+
+                class BelugaTransactionStartMessage implements IBelugaTransactionStartMessage {
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IBelugaTransactionStartMessage);
+                    public pokemon_id: (number|Long)[];
+                    public nonce: string;
+                    public beluga_id: string;
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IBelugaTransactionStartMessage): POGOProtos.Networking.Requests.Messages.BelugaTransactionStartMessage;
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IBelugaTransactionStartMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IBelugaTransactionStartMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.BelugaTransactionStartMessage;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.BelugaTransactionStartMessage;
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.BelugaTransactionStartMessage;
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.BelugaTransactionStartMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public toJSON(): { [k: string]: any };
+                }
+
                 interface ICancelTradingMessage {
                     player_id?: (string|null);
                 }
@@ -12320,6 +12693,27 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                interface ISetInGameCurrencyExchangeRateMessage {
+                    in_game_currency?: (string|null);
+                    fiat_currency?: (string|null);
+                    fiat_currency_cost_e6_per_in_game_unit?: (number|Long|null);
+                }
+
+                class SetInGameCurrencyExchangeRateMessage implements ISetInGameCurrencyExchangeRateMessage {
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.ISetInGameCurrencyExchangeRateMessage);
+                    public in_game_currency: string;
+                    public fiat_currency: string;
+                    public fiat_currency_cost_e6_per_in_game_unit: (number|Long);
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.ISetInGameCurrencyExchangeRateMessage): POGOProtos.Networking.Requests.Messages.SetInGameCurrencyExchangeRateMessage;
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.ISetInGameCurrencyExchangeRateMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.ISetInGameCurrencyExchangeRateMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.SetInGameCurrencyExchangeRateMessage;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.SetInGameCurrencyExchangeRateMessage;
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.SetInGameCurrencyExchangeRateMessage;
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.SetInGameCurrencyExchangeRateMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public toJSON(): { [k: string]: any };
+                }
+
                 interface ISetLobbyPokemonMessage {
                     raid_seed?: (number|Long|null);
                     gym_id?: (string|null);
@@ -12884,6 +13278,8 @@ export namespace POGOProtos {
                 FETCH_ALL_NEWS = 816,
                 MARK_READ_NEWS_ARTICLE = 817,
                 GET_PLAYER_DISPLAY_INFO = 818,
+                BELUGA_TRANSACTION_START = 819,
+                BELUGA_TRANSACTION_COMPLETE = 820,
                 GET_NEW_QUESTS = 900,
                 GET_QUEST_DETAILS = 901,
                 COMPLETE_QUEST = 902,
@@ -13604,6 +14000,84 @@ export namespace POGOProtos {
                 }
             }
 
+            interface IBelugaTransactionCompleteResponse {
+                status?: (POGOProtos.Networking.Responses.BelugaTransactionCompleteResponse.Status|null);
+                candy_awarded?: (number|null);
+                loot_awarded?: (POGOProtos.Inventory.ILoot|null);
+                beluga_finalize_response?: (POGOProtos.Data.Beluga.IBelugaBleFinalizeTransfer|null);
+                buckets_until_weekly_award?: (number|null);
+            }
+
+            class BelugaTransactionCompleteResponse implements IBelugaTransactionCompleteResponse {
+                constructor(properties?: POGOProtos.Networking.Responses.IBelugaTransactionCompleteResponse);
+                public status: POGOProtos.Networking.Responses.BelugaTransactionCompleteResponse.Status;
+                public candy_awarded: number;
+                public loot_awarded?: (POGOProtos.Inventory.ILoot|null);
+                public beluga_finalize_response?: (POGOProtos.Data.Beluga.IBelugaBleFinalizeTransfer|null);
+                public buckets_until_weekly_award: number;
+                public static create(properties?: POGOProtos.Networking.Responses.IBelugaTransactionCompleteResponse): POGOProtos.Networking.Responses.BelugaTransactionCompleteResponse;
+                public static encode(message: POGOProtos.Networking.Responses.IBelugaTransactionCompleteResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IBelugaTransactionCompleteResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.BelugaTransactionCompleteResponse;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.BelugaTransactionCompleteResponse;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.BelugaTransactionCompleteResponse;
+                public static toObject(message: POGOProtos.Networking.Responses.BelugaTransactionCompleteResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace BelugaTransactionCompleteResponse {
+
+                enum Status {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    FAILED = 2,
+                    ERROR_INVALID_POKEMON_ID = 3,
+                    ERROR_POKEMON_DEPLOYED = 4,
+                    ERROR_POKEMON_NOT_ALLOWED = 5,
+                    ERROR_POKEMON_IS_BUDDY = 6,
+                    ERROR_INVALID_TRANSACTION_ID = 7,
+                    ERROR_MISSING_TRANSACTION_ID = 8
+                }
+            }
+
+            interface IBelugaTransactionStartResponse {
+                status?: (POGOProtos.Networking.Responses.BelugaTransactionStartResponse.Status|null);
+                beluga_transfer_prep?: (POGOProtos.Data.Beluga.IBelugaBleTransferPrep|null);
+                server_signature?: (Uint8Array|null);
+            }
+
+            class BelugaTransactionStartResponse implements IBelugaTransactionStartResponse {
+                constructor(properties?: POGOProtos.Networking.Responses.IBelugaTransactionStartResponse);
+                public status: POGOProtos.Networking.Responses.BelugaTransactionStartResponse.Status;
+                public beluga_transfer_prep?: (POGOProtos.Data.Beluga.IBelugaBleTransferPrep|null);
+                public server_signature: Uint8Array;
+                public static create(properties?: POGOProtos.Networking.Responses.IBelugaTransactionStartResponse): POGOProtos.Networking.Responses.BelugaTransactionStartResponse;
+                public static encode(message: POGOProtos.Networking.Responses.IBelugaTransactionStartResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IBelugaTransactionStartResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.BelugaTransactionStartResponse;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.BelugaTransactionStartResponse;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.BelugaTransactionStartResponse;
+                public static toObject(message: POGOProtos.Networking.Responses.BelugaTransactionStartResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace BelugaTransactionStartResponse {
+
+                enum Status {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    FAILED = 2,
+                    ERROR_INVALID_POKEMON_ID = 3,
+                    ERROR_POKEMON_DEPLOYED = 4,
+                    ERROR_POKEMON_IS_EGG = 5,
+                    ERROR_POKEMON_IS_BUDDY = 6,
+                    ERROR_POKEMON_NOT_ALLOWED = 7,
+                    ERROR_INVALID_NONCE = 8,
+                    ERROR_TOO_MANY_POKEMON = 9,
+                    ERROR_NO_POKEMON_SPECIFIED = 10
+                }
+            }
+
             interface ICancelTradingResponse {
                 result?: (POGOProtos.Networking.Responses.CancelTradingResponse.Result|null);
                 trading?: (POGOProtos.Data.Trading.ITrading|null);
@@ -14182,6 +14656,7 @@ export namespace POGOProtos {
                     weather_bonus_settings?: (POGOProtos.Settings.Master.IWeatherBonus|null);
                     pokemon_scale_settings?: (POGOProtos.Settings.Master.IPokemonScaleSetting|null);
                     iap_category_display?: (POGOProtos.Settings.Master.IIapItemCategoryDisplay|null);
+                    beluga_pokemon_whitelist?: (POGOProtos.Settings.Master.IBelugaPokemonWhitelist|null);
                     onboarding_settings?: (POGOProtos.Settings.Master.IOnboardingSettings|null);
                     friendship_milestone_settings?: (POGOProtos.Settings.Master.IFriendshipLevelMilestoneSettings|null);
                     lucky_pokemon_settings?: (POGOProtos.Settings.Master.ILuckyPokemonSettings|null);
@@ -14216,6 +14691,7 @@ export namespace POGOProtos {
                     public weather_bonus_settings?: (POGOProtos.Settings.Master.IWeatherBonus|null);
                     public pokemon_scale_settings?: (POGOProtos.Settings.Master.IPokemonScaleSetting|null);
                     public iap_category_display?: (POGOProtos.Settings.Master.IIapItemCategoryDisplay|null);
+                    public beluga_pokemon_whitelist?: (POGOProtos.Settings.Master.IBelugaPokemonWhitelist|null);
                     public onboarding_settings?: (POGOProtos.Settings.Master.IOnboardingSettings|null);
                     public friendship_milestone_settings?: (POGOProtos.Settings.Master.IFriendshipLevelMilestoneSettings|null);
                     public lucky_pokemon_settings?: (POGOProtos.Settings.Master.ILuckyPokemonSettings|null);
@@ -16650,6 +17126,32 @@ export namespace POGOProtos {
                 }
             }
 
+            interface ISetInGameCurrencyExchangeRateResponse {
+                status?: (POGOProtos.Networking.Responses.SetInGameCurrencyExchangeRateResponse.Status|null);
+            }
+
+            class SetInGameCurrencyExchangeRateResponse implements ISetInGameCurrencyExchangeRateResponse {
+                constructor(properties?: POGOProtos.Networking.Responses.ISetInGameCurrencyExchangeRateResponse);
+                public status: POGOProtos.Networking.Responses.SetInGameCurrencyExchangeRateResponse.Status;
+                public static create(properties?: POGOProtos.Networking.Responses.ISetInGameCurrencyExchangeRateResponse): POGOProtos.Networking.Responses.SetInGameCurrencyExchangeRateResponse;
+                public static encode(message: POGOProtos.Networking.Responses.ISetInGameCurrencyExchangeRateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.ISetInGameCurrencyExchangeRateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.SetInGameCurrencyExchangeRateResponse;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.SetInGameCurrencyExchangeRateResponse;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.SetInGameCurrencyExchangeRateResponse;
+                public static toObject(message: POGOProtos.Networking.Responses.SetInGameCurrencyExchangeRateResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace SetInGameCurrencyExchangeRateResponse {
+
+                enum Status {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    FAILURE = 2
+                }
+            }
+
             interface ISetLobbyPokemonResponse {
                 result?: (POGOProtos.Networking.Responses.SetLobbyPokemonResponse.Result|null);
                 lobby?: (POGOProtos.Data.Raid.ILobby|null);
@@ -18367,6 +18869,25 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
+        interface IBelugaGlobalSettings {
+            enable_beluga_transfer?: (boolean|null);
+            max_num_pokemon_per_transfer?: (number|null);
+        }
+
+        class BelugaGlobalSettings implements IBelugaGlobalSettings {
+            constructor(properties?: POGOProtos.Settings.IBelugaGlobalSettings);
+            public enable_beluga_transfer: boolean;
+            public max_num_pokemon_per_transfer: number;
+            public static create(properties?: POGOProtos.Settings.IBelugaGlobalSettings): POGOProtos.Settings.BelugaGlobalSettings;
+            public static encode(message: POGOProtos.Settings.IBelugaGlobalSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: POGOProtos.Settings.IBelugaGlobalSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.BelugaGlobalSettings;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.BelugaGlobalSettings;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.BelugaGlobalSettings;
+            public static toObject(message: POGOProtos.Settings.BelugaGlobalSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         interface IClientPerformanceSettings {
             enable_local_disk_caching?: (boolean|null);
             max_number_local_battle_parties?: (number|null);
@@ -18491,6 +19012,7 @@ export namespace POGOProtos {
             client_perf_settings?: (POGOProtos.Settings.IClientPerformanceSettings|null);
             news_global_settings?: (POGOProtos.Settings.INewsGlobalSettings|null);
             quest_global_settings?: (POGOProtos.Settings.IQuestGlobalSettings|null);
+            beluga_global_settings?: (POGOProtos.Settings.IBelugaGlobalSettings|null);
             telemetry_global_settings?: (POGOProtos.Settings.ITelemetryGlobalSettings|null);
             login_settings?: (POGOProtos.Settings.ILoginSettings|null);
             social_settings?: (POGOProtos.Settings.ISocialClientSettings|null);
@@ -18522,6 +19044,7 @@ export namespace POGOProtos {
             public client_perf_settings?: (POGOProtos.Settings.IClientPerformanceSettings|null);
             public news_global_settings?: (POGOProtos.Settings.INewsGlobalSettings|null);
             public quest_global_settings?: (POGOProtos.Settings.IQuestGlobalSettings|null);
+            public beluga_global_settings?: (POGOProtos.Settings.IBelugaGlobalSettings|null);
             public telemetry_global_settings?: (POGOProtos.Settings.ITelemetryGlobalSettings|null);
             public login_settings?: (POGOProtos.Settings.ILoginSettings|null);
             public social_settings?: (POGOProtos.Settings.ISocialClientSettings|null);
@@ -18767,6 +19290,29 @@ export namespace POGOProtos {
                 public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.Master.BadgeSettings;
                 public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.Master.BadgeSettings;
                 public static toObject(message: POGOProtos.Settings.Master.BadgeSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IBelugaPokemonWhitelist {
+                max_allowed_pokemon_pokedex_number?: (number|null);
+                additional_pokemon_allowed?: (POGOProtos.Enums.PokemonId[]|null);
+                forms_allowed?: (POGOProtos.Enums.Form[]|null);
+                costumes_allowed?: (POGOProtos.Enums.Costume[]|null);
+            }
+
+            class BelugaPokemonWhitelist implements IBelugaPokemonWhitelist {
+                constructor(properties?: POGOProtos.Settings.Master.IBelugaPokemonWhitelist);
+                public max_allowed_pokemon_pokedex_number: number;
+                public additional_pokemon_allowed: POGOProtos.Enums.PokemonId[];
+                public forms_allowed: POGOProtos.Enums.Form[];
+                public costumes_allowed: POGOProtos.Enums.Costume[];
+                public static create(properties?: POGOProtos.Settings.Master.IBelugaPokemonWhitelist): POGOProtos.Settings.Master.BelugaPokemonWhitelist;
+                public static encode(message: POGOProtos.Settings.Master.IBelugaPokemonWhitelist, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: POGOProtos.Settings.Master.IBelugaPokemonWhitelist, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.Master.BelugaPokemonWhitelist;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.Master.BelugaPokemonWhitelist;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.Master.BelugaPokemonWhitelist;
+                public static toObject(message: POGOProtos.Settings.Master.BelugaPokemonWhitelist, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
 
@@ -19860,6 +20406,7 @@ export namespace POGOProtos {
                 parent_form?: (POGOProtos.Enums.Form|null);
                 is_transferable?: (boolean|null);
                 is_deployable?: (boolean|null);
+                is_tradable?: (boolean|null);
             }
 
             class PokemonSettings implements IPokemonSettings {
@@ -19900,6 +20447,7 @@ export namespace POGOProtos {
                 public parent_form: POGOProtos.Enums.Form;
                 public is_transferable: boolean;
                 public is_deployable: boolean;
+                public is_tradable: boolean;
                 public static create(properties?: POGOProtos.Settings.Master.IPokemonSettings): POGOProtos.Settings.Master.PokemonSettings;
                 public static encode(message: POGOProtos.Settings.Master.IPokemonSettings, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Settings.Master.IPokemonSettings, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -20219,6 +20767,9 @@ export namespace POGOProtos {
             max_friend_nickname_length?: (number|null);
             enable_add_friend_via_qr_code?: (boolean|null);
             enable_share_ex_pass?: (boolean|null);
+            enable_facebook_friends?: (boolean|null);
+            facebook_friend_limit_per_request?: (number|null);
+            disable_facebook_friends_opening_prompt?: (boolean|null);
         }
 
         class SocialClientSettings implements ISocialClientSettings {
@@ -20229,6 +20780,9 @@ export namespace POGOProtos {
             public max_friend_nickname_length: number;
             public enable_add_friend_via_qr_code: boolean;
             public enable_share_ex_pass: boolean;
+            public enable_facebook_friends: boolean;
+            public facebook_friend_limit_per_request: number;
+            public disable_facebook_friends_opening_prompt: boolean;
             public static create(properties?: POGOProtos.Settings.ISocialClientSettings): POGOProtos.Settings.SocialClientSettings;
             public static encode(message: POGOProtos.Settings.ISocialClientSettings, writer?: $protobuf.Writer): $protobuf.Writer;
             public static encodeDelimited(message: POGOProtos.Settings.ISocialClientSettings, writer?: $protobuf.Writer): $protobuf.Writer;
