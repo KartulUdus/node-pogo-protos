@@ -2,5 +2,6 @@ syntax = "proto3";
 package POGOProtos.Networking.Requests.Social;
 
 message InviteFacebookFriendMessage {
-	string business_token = 1;
+	string fb_access_token = 1;
+	string friend_fb_user_id = 2;
 }
