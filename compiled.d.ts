@@ -1259,6 +1259,8 @@ export namespace POGOProtos {
                 data_with_me?: (Uint8Array|null);
                 version?: (number|Long|null);
                 created_ms?: (number|Long|null);
+                fb_user_id?: (string|null);
+                is_facebook_friendship?: (boolean|null);
             }
 
             class Friend implements IFriend {
@@ -1270,6 +1272,8 @@ export namespace POGOProtos {
                 public data_with_me: Uint8Array;
                 public version: (number|Long);
                 public created_ms: (number|Long);
+                public fb_user_id: string;
+                public is_facebook_friendship: boolean;
                 public static create(properties?: POGOProtos.Data.Friends.IFriend): POGOProtos.Data.Friends.Friend;
                 public static encode(message: POGOProtos.Data.Friends.IFriend, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Data.Friends.IFriend, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -6635,7 +6639,7 @@ export namespace POGOProtos {
             CONVERSATION = 2,
             ENCOUNTER_ENTER = 3,
             ENCOUNTER_LEAVE = 4,
-            AVATAR_SELECTION = 5,
+            AVATAR_SELECTION_ONBOARDING = 5,
             AVATAR_GENDER = 6,
             AVATAR_GENDER_CHOSEN = 7,
             AVATAR_HEAD_CHOSEN = 8,
@@ -18743,12 +18747,14 @@ export namespace POGOProtos {
             interface IUpgradePokemonResponse {
                 result?: (POGOProtos.Networking.Responses.UpgradePokemonResponse.Result|null);
                 upgraded_pokemon?: (POGOProtos.Data.IPokemonData|null);
+                next_upgraded_pokemon?: (POGOProtos.Data.IPokemonData|null);
             }
 
             class UpgradePokemonResponse implements IUpgradePokemonResponse {
                 constructor(properties?: POGOProtos.Networking.Responses.IUpgradePokemonResponse);
                 public result: POGOProtos.Networking.Responses.UpgradePokemonResponse.Result;
                 public upgraded_pokemon?: (POGOProtos.Data.IPokemonData|null);
+                public next_upgraded_pokemon?: (POGOProtos.Data.IPokemonData|null);
                 public static create(properties?: POGOProtos.Networking.Responses.IUpgradePokemonResponse): POGOProtos.Networking.Responses.UpgradePokemonResponse;
                 public static encode(message: POGOProtos.Networking.Responses.IUpgradePokemonResponse, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static encodeDelimited(message: POGOProtos.Networking.Responses.IUpgradePokemonResponse, writer?: $protobuf.Writer): $protobuf.Writer;
