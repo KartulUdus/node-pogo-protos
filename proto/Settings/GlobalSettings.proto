@@ -1,7 +1,6 @@
 syntax = "proto3";
 package POGOProtos.Settings;
 
-import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Settings/EventSettings.proto";
 import "POGOProtos/Settings/FestivalSettings.proto";
 import "POGOProtos/Settings/FortSettings.proto";
@@ -22,9 +21,12 @@ import "POGOProtos/Settings/QuestGlobalSettings.proto";
 import "POGOProtos/Settings/SocialClientSettings.proto";
 import "POGOProtos/Settings/TradingGlobalSettings.proto";
 import "POGOProtos/Settings/UpsightLoggingSettings.proto";
-import "POGOProtos/Settings/BelugaGlobalSettings.proto";
+import "POGOProtos/Settings/BackgroundModeGlobalSettings.proto";
+import "POGOProtos/Settings/ProbeSettings.proto";
 import "POGOProtos/Settings/PokecoinPurchaseDisplaySettings.proto";
+import "POGOProtos/Settings/BelugaGlobalSettings.proto";
 import "POGOProtos/Settings/HelpshiftSettings.proto";
+import "POGOProtos/Enums/PokemonId.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;

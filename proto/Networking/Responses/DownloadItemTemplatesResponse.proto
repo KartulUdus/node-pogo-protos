@@ -30,6 +30,7 @@ import "POGOProtos/Settings/Master/FriendshipLevelMilestoneSettings.proto";
 import "POGOProtos/Settings/Master/LuckyPokemonSettings.proto";
 import "POGOProtos/Settings/Master/ExRaidSettings.proto";
 import "POGOProtos/Settings/Master/BackgroundModeSettings.proto";
+import "POGOProtos/Settings/Master/BelugaPokemonWhitelist.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;

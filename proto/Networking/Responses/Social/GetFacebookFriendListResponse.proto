@@ -1,13 +1,9 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses.Social;
 
-import "POGOProtos/Data/Friends/FacebookFriend.proto";
+import "POGOProtos/Data/Player/PlayerSummary.proto";
 
 message GetFacebookFriendListResponse {
-	Result result = 1;
-	repeated .POGOProtos.Data.Friends.FacebookFriend friend = 2;
-	string next_cursor = 3;
-
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -16,4 +12,13 @@ message GetFacebookFriendListResponse {
 		ERROR_FACEBOOK_PERMISSIONS = 4;
 		ERROR_NO_FACEBOOK_ID = 5;
 	}
+
+	message FacebookFriendProto {
+		.POGOProtos.Data.Player.PlayerSummary player = 1;
+		string full_name = 2;
+	}
+
+	Result result = 1;
+	repeated FacebookFriendProto friend = 2;
+	string next_cursor = 3;
 }
